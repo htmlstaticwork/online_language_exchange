@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light" dir="ltr">
+<head>
+    <!-- Core Meta -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Access | LinguaBridge - Login</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><circle cx=%2250%22 cy=%2250%22 r=%2245%22 fill=%22none%22 stroke=%22%23E8634A%22 stroke-width=%225%22/><path d=%22M30 40 Q50 30 70 40 Q80 60 50 75 Q20 60 30 40%22 fill=%22%23E8634A%22/></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&family=Outfit:wght@700;800&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/dark-mode.css">
+    <style>
+        body { min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 60px 20px; background-color: var(--bg-color); color: var(--text-color); }
+        .auth-card { width: 100%; max-width: 440px; padding: 30px; border-radius: 0; position: relative; background-color: var(--bg-color); border: 4px solid var(--border-color); color: var(--text-color); }
+        .auth-card::before { content: ''; position: absolute; top: 10px; left: 10px; right: -10px; bottom: -10px; border: 4px solid var(--primary-color); z-index: -1; }
+    </style>
+</head>
+<body>
+    <div class="auth-card">
+        <div class="text-center mb-3">
+            <a href="index.html" class="d-inline-flex align-items-center mb-2 text-decoration-none">
+                <svg width="60" height="60" viewBox="0 0 200 200" class="me-2">
+                    <circle cx="100" cy="100" r="90" fill="none" stroke="#E8634A" stroke-width="10"/>
+                    <path d="M60 80 Q100 60 140 80 Q160 120 100 150 Q40 120 60 80" fill="#E8634A"/>
+                </svg>
+                <span class="h3 mb-0 fw-800 text-inherit" style="font-family:'Outfit'">LinguaBridge</span>
+            </a>
+            <h2 class="fw-800 h4 mb-0">Welcome Back</h2>
+        </div>
+
+        <div class="d-flex gap-2 mb-3">
+            <button class="btn btn-outline border-2 w-100 py-3 fw-800 d-flex align-items-center justify-content-center gap-2"><i class="bi bi-google"></i> GOOGLE</button>
+            <button class="btn btn-outline border-2 w-100 py-3 fw-800 d-flex align-items-center justify-content-center gap-2"><i class="bi bi-facebook"></i> FACEBOOK</button>
+        </div>
+
+        <div class="text-center mb-2">
+            <p class="small fw-bold text-uppercase tracking-widest opacity-50 px-0">OR LOGIN WITH EMAIL</p>
+        </div>
+
+        <form class="needs-validation" novalidate id="login-form">
+            <div class="mb-3">
+                <label class="form-label fw-800 small tracking-widest uppercase">EMAIL ADDRESS</label>
+                <input type="email" class="form-control border-3 border-primary p-3 bg-transparent text-inherit" required placeholder="name@email.com">
+            </div>
+            <div class="mb-3">
+                <label class="form-label fw-800 small tracking-widest uppercase">PASSWORD</label>
+                <input type="password" class="form-control border-3 border-black p-3 bg-white text-black" required placeholder="••••••••">
+            </div>
+            <div class="d-flex justify-content-between mb-3">
+                <div class="form-check">
+                    <input class="form-check-input border-2 border-primary" type="checkbox" id="remember">
+                    <label class="form-check-label fw-bold small" for="remember">REMEMBER ME</label>
+                </div>
+                <a href="#" class="small text-primary fw-800 text-decoration-none">FORGOT PASSWORD</a>
+            </div>
+            <button type="submit" class="btn btn-primary w-100 py-3 fw-800" onclick="window.location.href='dashboard.html'; return false;">ACCESS PORTAL</button>
+        </form>
+
+        <div class="text-center mt-3">
+            <p class="small fw-bold mb-0">No profile yet? <a href="register.html" class="text-primary fw-800 text-decoration-none">JOIN US NOW</a></p>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

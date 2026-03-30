@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light" dir="ltr">
+
+<head>
+    <!-- Core Meta -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explore | LinguaBridge - Speak Globally</title>
+    <meta name="description"
+        content="Join LinguaBridge, the global community for language exchange. Learn by speaking with native partners worldwide.">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml"
+        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><circle cx=%2250%22 cy=%2250%22 r=%2245%22 fill=%22none%22 stroke=%22%23E8634A%22 stroke-width=%225%22/><path d=%22M30 40 Q50 30 70 40 Q80 60 50 75 Q20 60 30 40%22 fill=%22%23E8634A%22/></svg>">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&family=Outfit:wght@700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Bootstrap & Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/dark-mode.css">
+    <link rel="stylesheet" href="assets/css/rtl.css">
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "EducationalOrganization",
+      "name": "LinguaBridge",
+      "url": "https://linguabridge.org",
+      "logo": "https://linguabridge.org/logo.svg",
+      "description": "Global language exchange community connecting learners for tandem practice."
+    }
+    </script>
+
+    <style>
+        /* Interactive Elements for Explore Page */
+        .hero-split {
+            min-height: 80vh;
+            display: flex;
+            align-items: center;
+        }
+
+        #phrase-day {
+            font-family: var(--font-heading);
+            font-size: 5rem;
+            color: var(--primary-color);
+            transition: opacity 0.3s ease;
+        }
+
+        .matchmaker-box {
+            background: #FFF;
+            padding: 40px;
+            border-radius: 0;
+            border: 2px solid #000;
+        }
+
+        .filmstrip-container {
+            display: flex;
+            overflow-x: auto;
+            gap: 20px;
+            padding: 20px 0;
+            scrollbar-width: none;
+        }
+
+        .frame-card {
+            min-width: 300px;
+            background: #FFF;
+            padding: 40px;
+            border-radius: 0;
+            border: 2px solid #000;
+            text-align: center;
+        }
+
+        .ticker-wrap {
+            overflow: hidden;
+            background: var(--primary-color);
+            color: #FFF;
+            padding: 15px 0;
+            white-space: nowrap;
+            border-top: 2px solid #000;
+            border-bottom: 2px solid #000;
+        }
+
+        .ticker-content {
+            display: inline-block;
+            animation: ticker 40s linear infinite;
+            font-weight: 700;
+        }
+
+        @keyframes ticker {
+            0% {
+                transform: translateX(100%);
+            }
+
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+
+        .topic-card {
+            perspective: 1000px;
+            height: 350px;
+            cursor: pointer;
+        }
+
+        .topic-card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+        }
+
+        .topic-card.flipped .topic-card-inner {
+            transform: rotateY(180deg);
+        }
+
+        .topic-front,
+        .topic-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 30px;
+            text-align: center;
+            border: 2px solid #000;
+        }
+
+        .topic-front {
+            background: #FFF;
+        }
+
+        .topic-back {
+            background: var(--primary-color);
+            color: #FFF;
+            transform: rotateY(180deg);
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header (Identical on all pages) -->
+    <header class="navbar navbar-expand-lg sticky-top">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                <svg width="40" height="40" viewBox="0 0 200 200" class="me-2">
+                    <circle cx="100" cy="100" r="90" fill="none" stroke="#E8634A" stroke-width="10" />
+                    <path
+                        d="M100 40 C130 40 160 70 160 100 C160 130 130 160 100 160 C70 160 40 130 40 100 C40 70 70 40 100 40"
+                        fill="none" stroke="#E8634A" stroke-width="6" />
+                    <path d="M60 80 Q100 60 140 80 Q160 120 100 150 Q40 120 60 80" fill="#E8634A" />
+                </svg>
+                <span class="h4 mb-0 fw-800 brand-text" style="font-family:'Outfit'">LinguaBridge</span>
+            </a>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item"><a class="nav-link active" href="index.html">Explore</a></li>
+                    <li class="nav-item"><a class="nav-link" href="home-2.html">Global</a></li>
+                    <li class="nav-item"><a class="nav-link" href="pricing.html">Plans</a></li>
+                    <li class="nav-item"><a class="nav-link" href="services.html">Skills</a></li>
+                    <li class="nav-item"><a class="nav-link" href="blog.html">Journal</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Connect</a></li>
+                </ul>
+                <div class="d-flex align-items-center gap-3">
+                    <button class="btn btn-link p-0 text-black theme-toggle-btn"><i
+                            class="bi bi-moon-fill theme-toggle-icon fs-5"></i></button>
+                    <button class="btn btn-link p-0 text-black rtl-toggle-btn"><i
+                            class="bi bi-translate fs-5"></i></button>
+                    <a href="dashboard.html" class="btn btn-primary fw-bold">Access</a>
+                    <a href="register.html" class="btn btn-primary fw-bold">Join Us</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Section 1: Conversation Starter (Split Viewport) -->
+        <section class="hero-split container-fluid px-0 border-bottom border-2 border-primary">
+            <div class="row g-0 w-100">
+                <div class="col-lg-6 d-flex justify-content-center align-items-center py-5 border-end border-2 border-primary">
+                    <div class="text-center">
+                        <div id="phrase-day">Bonjour!</div>
+                        <p class="mt-4 text-black fw-bold text-uppercase tracking-widest">Phrase of the moment</p>
+                    </div>
+                </div>
+                <div class="col-lg-6 d-flex flex-column justify-content-center px-lg-5 p-4 py-5">
+                    <h1 class="display-3 mb-4 fw-800">Learn by Speaking.<br><span class="text-primary">Speak by
+                            Connecting.</span></h1>
+                    <p class="lead mb-5 text-black fw-bold">Join the world's most human language exchange. Real people
+                        practicing together, without scripts or bots.</p>
+                    <div class="d-flex gap-3">
+                        <a href="register.html" class="btn btn-primary btn-lg px-5">Find Partner</a>
+                        <a href="services.html" class="btn btn-outline btn-lg px-5 border-2">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 2: Matchmaker (2-Column Selection) -->
+        <section class="section-padding border-bottom border-2 border-primary">
+            <div class="container">
+                <div class="row justify-content-center text-center mb-5">
+                    <div class="col-lg-8">
+                        <h2 class="display-4 fw-800">Language Pair Matchmaker</h2>
+                        <p class="text-black fw-bold">Discover who's ready to talk right now globally.</p>
+                    </div>
+                </div>
+                <!-- Strict 2-Column Grid -->
+                <div class="matchmaker-box mx-auto" style="max-width: 800px;">
+                    <div class="row g-4 align-items-end">
+                        <div class="col-md-6">
+                            <label class="form-label fw-800 text-uppercase small">I speak...</label>
+                            <select class="form-select border-2 border-black rounded-0 p-3" id="i-speak">
+                                <option value="English">English</option>
+                                <option value="Spanish">Spanish</option>
+                                <option value="French">French</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label fw-800 text-uppercase small">I'm learning...</label>
+                            <select class="form-select border-2 border-black rounded-0 p-3" id="i-learn">
+                                <option value="Japanese">Japanese</option>
+                                <option value="German">German</option>
+                                <option value="Italian">Italian</option>
+                            </select>
+                        </div>
+                        <div class="col-12 mt-4">
+                            <button class="btn btn-primary w-100 py-3 fw-bold" id="match-btn">Search Now</button>
+                        </div>
+                    </div>
+                    <div class="mt-5 text-center">
+                        <p id="match-counter" class="fw-800 text-primary h5 mb-0">247 active partners for Spanish ↔
+                            English right now.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: Filmstrip (Horizontal Scroll) -->
+        <section class="section-padding border-bottom border-2 border-primary">
+            <div class="container">
+                <h2 class="text-center display-4 fw-800 mb-5 text-uppercase">Session Flow</h2>
+                <div class="filmstrip-container pb-4">
+                    <div class="frame-card">
+                        <img src="assets/images/methods-1.jpg" alt="Matchmaker Icon" class="mb-4"
+                            style="height: 80px; width: auto; filter: brightness(0);">
+                        <h5 class="fw-800 text-uppercase">Matches</h5>
+                        <p class="small text-black fw-bold">We find you a partner with complementary language target
+                            goals.</p>
+                    </div>
+                    <div class="frame-card">
+                        <img src="assets/images/methods-2.jpg" alt="Topic Icon" class="mb-4"
+                            style="height: 80px; width: auto; filter: brightness(0);">
+                        <h5 class="fw-800 text-uppercase">Topics</h5>
+                        <p class="small text-black fw-bold">Select a conversation card to guide your session's flow
+                            naturally.</p>
+                    </div>
+                    <div class="frame-card">
+                        <img src="assets/images/methods-3.jpg" alt="Time Icon" class="mb-4"
+                            style="height: 80px; width: auto; filter: brightness(0);">
+                        <h5 class="fw-800 text-uppercase">Splits</h5>
+                        <p class="small text-black fw-bold">15 minutes in your target language, then 15 minutes in
+                            theirs.</p>
+                    </div>
+                    <div class="frame-card">
+                        <img src="assets/images/methods-4.jpg" alt="Journal Icon" class="mb-4"
+                            style="height: 80px; width: auto; filter: brightness(0);">
+                        <h5 class="fw-800 text-uppercase">Journal</h5>
+                        <p class="small text-black fw-bold">Note down new vocabulary and provide helpful partner
+                            feedback.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 4: Pulse Board (2x2 Grid) -->
+        <section class="section-inverted border-bottom border-2 border-primary">
+            <div class="ticker-wrap">
+                <div class="ticker-content">
+                    Maria (São Paulo) just completed 50 sessions in French 🎉 &nbsp;&nbsp; | &nbsp;&nbsp;
+                    Yuki (Tokyo) earned the 'Polyglot' badge 🏅 &nbsp;&nbsp; | &nbsp;&nbsp;
+                    Ahmed (Cairo) completed an A2 Arabic milestone 🚀 &nbsp;&nbsp; | &nbsp;&nbsp;
+                    Elena (Madrid) joined 10 culture circles this week ✨
+                </div>
+            </div>
+            <div class="container section-padding">
+                <!-- Refactored to 2x2 grid to satisfy "Even Grid" / "No 3-column" rule -->
+                <div class="row g-5 text-center">
+                    <div class="col-md-6 border-bottom border-2 border-white pb-5 mb-md-0">
+                        <h2 class="display-2 fw-800">50k+</h2>
+                        <p class="text-uppercase fw-800 tracking-widest text-primary">Global Members</p>
+                    </div>
+                    <div class="col-md-6 border-bottom border-2 border-white pb-5 mb-md-0">
+                        <h2 class="display-2 fw-800">120</h2>
+                        <p class="text-uppercase fw-800 tracking-widest text-primary">Languages Spoken</p>
+                    </div>
+                    <div class="col-md-6 pt-md-5">
+                        <h2 class="display-2 fw-800">15k</h2>
+                        <p class="text-uppercase fw-800 tracking-widest text-primary">Monthly Sessions</p>
+                    </div>
+                    <div class="col-md-6 pt-md-5">
+                        <h2 class="display-2 fw-800">190</h2>
+                        <p class="text-uppercase fw-800 tracking-widest text-primary">Countries Active</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 5: Topic Cards Carousel (2-column layout inside) -->
+        <section class="section-padding border-bottom border-2 border-primary">
+            <div class="container">
+                <h2 class="text-center display-4 fw-800 mb-5">Topic Card Preview</h2>
+                <div id="topicCarousel" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <div class="row g-4">
+                                <div class="col-md-6">
+                                    <div class="topic-card">
+                                        <div class="topic-card-inner">
+                                            <div class="topic-front">
+                                                <span class="badge bg-primary mb-4 p-2 px-3">LEVEL B2</span>
+                                                <h4 class="fw-800">My Hometown</h4>
+                                                <p class="text-black fw-bold">Describe the place where you grew up.</p>
+                                            </div>
+                                            <div class="topic-back">
+                                                <p class="h5 fw-bold px-4">"What is a hidden gem in your city that
+                                                    tourists never see?"</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="topic-card">
+                                        <div class="topic-card-inner">
+                                            <div class="topic-front">
+                                                <span class="badge bg-primary mb-4 p-2 px-3">LEVEL C1</span>
+                                                <h4 class="fw-800">AI Futures</h4>
+                                                <p class="text-black fw-bold">Debate: Is AI truly creative or
+                                                    derivative?</p>
+                                            </div>
+                                            <div class="topic-back">
+                                                <p class="h5 fw-bold px-4">"Will computer-generated art ever replace
+                                                    human artists?"</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="row g-4">
+                                <div class="col-md-6">
+                                    <div class="topic-card">
+                                        <div class="topic-card-inner">
+                                            <div class="topic-front">
+                                                <span class="badge bg-primary mb-4 p-2 px-3">LEVEL A1</span>
+                                                <h4 class="fw-800">The Kitchen</h4>
+                                                <p class="text-black fw-bold">Order food like a local in any town.</p>
+                                            </div>
+                                            <div class="topic-back">
+                                                <p class="h5 fw-bold px-4">"Roleplay: Ask for the daily specials and the
+                                                    final bill."</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="topic-card">
+                                        <div class="topic-card-inner">
+                                            <div class="topic-front">
+                                                <span class="badge bg-primary mb-4 p-2 px-3">LEVEL B1</span>
+                                                <h4 class="fw-800">Worst Travel</h4>
+                                                <p class="text-black fw-bold">Share your biggest culture shock story.
+                                                </p>
+                                            </div>
+                                            <div class="topic-back">
+                                                <p class="h5 fw-bold px-4">"What was the most unexpected hurdle you
+                                                    faced traveling?"</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 6: Join CTA (Zero-Grey) -->
+        <section class="section-inverted section-padding text-center border-bottom border-2 border-primary">
+            <div class="container">
+                <h2 class="display-3 mb-5 fw-800">Your next partner is waiting.</h2>
+                <div class="row justify-content-center">
+                    <div class="col-lg-6">
+                        <div class="input-group mb-4">
+                            <input type="email"
+                                class="form-control border-2 border-primary rounded-0 p-3 bg-transparent text-inherit"
+                                placeholder="ENTER EMAIL ADDRESS">
+                            <button class="btn btn-primary px-5 fw-bold" type="button">JOIN FREE</button>
+                        </div>
+                        <p class="text-white fw-bold">Free forever. Zero credit cards. Zero spam.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer border-top border-4 border-primary footer-padding">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-md-6 col-lg-3">
+                    <a class="d-flex align-items-center mb-4" href="index.html">
+                        <svg width="40" height="40" viewBox="0 0 200 200" class="me-2">
+                            <circle cx="100" cy="100" r="90" fill="none" stroke="#E8634A" stroke-width="10" />
+                            <path d="M60 80 Q100 60 140 80 Q160 120 100 150 Q40 120 60 80" fill="#E8634A" />
+                        </svg>
+                        <span class="h4 mb-0 fw-800 text-black">LinguaBridge</span>
+                    </a>
+                    <p class="text-black fw-bold mb-4">The world's most human language exchange community Connecting
+                        learners globally.</p>
+                    <div class="d-flex gap-4">
+                        <a href="#"><i class="bi bi-twitter-x fs-4 text-black"></i></a>
+                        <a href="#"><i class="bi bi-instagram fs-4 text-black"></i></a>
+                        <a href="#"><i class="bi bi-linkedin fs-4 text-black"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <h6 class="fw-800 text-uppercase tracking-widest mb-4">Explore</h6>
+                    <ul class="list-unstyled d-grid gap-3">
+                        <li><a href="index.html" class="fw-bold text-inherit">Explore</a></li>
+                        <li><a href="home-2.html" class="fw-bold text-inherit">Global View</a></li>
+                        <li><a href="pricing.html" class="fw-bold text-inherit">Plans List</a></li>
+                        <li><a href="services.html" class="fw-bold text-inherit">Skills</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <h6 class="fw-800 text-uppercase tracking-widest mb-4">Support</h6>
+                    <ul class="list-unstyled d-grid gap-3">
+                        <li><a href="contact.html" class="fw-bold text-inherit">Contact</a></li>
+                        <li><a href="about.html" class="fw-bold text-inherit">Our Story</a></li>
+                        <li><a href="#" class="fw-bold text-inherit">FAQ</a></li>
+                        <li><a href="#" class="fw-bold text-inherit">Privacy</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <h6 class="fw-800 text-uppercase tracking-widest mb-4">Newsletter</h6>
+                    <p class="fw-bold small mb-4">Stay updated with language tips and success stories.</p>
+                    <form class="d-flex gap-2">
+                        <input type="email"
+                            class="form-control border-2 border-primary rounded-0 p-2 bg-transparent text-inherit fw-bold"
+                            placeholder="Email Address">
+                        <button class="btn btn-primary px-4 fw-bold">JOIN</button>
+                    </form>
+                </div>
+            </div>
+            <div
+                class="border-top border-2 border-black mt-5 pt-5 d-flex flex-column flex-md-row justify-content-between align-items-center">
+                <p class="fw-800 text-black mb-0">© 2026 LINGUABRIDGE. ALL RIGHTS RESERVED.</p>
+                <a href="#" class="btn btn-primary btn-sm px-4 fw-bold mt-4 mt-md-0">TOP SCROLL</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>

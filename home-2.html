@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light" dir="ltr">
+
+<head>
+    <!-- Core Meta -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global | LinguaBridge - The Global Classroom</title>
+    <meta name="description"
+        content="Explore the worldwide network of language learners. See where in the world people are practicing right now.">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml"
+        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><circle cx=%2250%22 cy=%2250%22 r=%2245%22 fill=%22none%22 stroke=%22%23E8634A%22 stroke-width=%225%22/><path d=%22M30 40 Q50 30 70 40 Q80 60 50 75 Q20 60 30 40%22 fill=%22%23E8634A%22/></svg>">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&family=Outfit:wght@700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Bootstrap & Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/dark-mode.css">
+    <link rel="stylesheet" href="assets/css/rtl.css">
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "Global Classroom",
+      "description": "Visualize the global language exchange community on our world map."
+    }
+    </script>
+
+    <style>
+        .map-section {
+            background: #000;
+            color: #FFF;
+            padding: 120px 0;
+            position: relative;
+            overflow: hidden;
+            border-bottom: 4px solid var(--primary-color);
+        }
+
+        .map-svg {
+            width: 100%;
+            height: auto;
+            max-width: 1000px;
+            margin: 0 auto;
+            display: block;
+            opacity: 0.15;
+        }
+
+        .pulsing-dot {
+            position: absolute;
+            width: 16px;
+            height: 16px;
+            background: var(--primary-color);
+            border-radius: 50%;
+            cursor: pointer;
+            animation: pulse 2s infinite;
+            border: 2px solid #FFF;
+        }
+
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(232, 99, 74, 0.7);
+            }
+
+            70% {
+                box-shadow: 0 0 0 20px rgba(232, 99, 74, 0);
+            }
+
+            100% {
+                box-shadow: 0 0 0 0 rgba(232, 99, 74, 0);
+            }
+        }
+
+        .evidence-item {
+            border-bottom: 2px solid #000;
+            padding: 30px 0;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .evidence-item .content {
+            display: none;
+            margin-top: 20px;
+            font-weight: 700;
+            color: #000;
+            line-height: 1.6;
+        }
+
+        .evidence-item.active .content {
+            display: block;
+        }
+
+        .evidence-item:hover h4 {
+            color: var(--primary-color);
+        }
+
+        .split-card {
+            background: #FFF;
+            border: 4px solid #000;
+            overflow: hidden;
+        }
+
+        .split-side {
+            padding: 80px;
+        }
+
+        .split-side.before {
+            background: #FFF;
+            border-right: 4px solid #000;
+        }
+
+        [data-theme="dark"] .split-card {
+            background: #000;
+            border-color: #FFF;
+        }
+
+        [data-theme="dark"] .split-side.before {
+            background: #000;
+            border-right-color: #FFF;
+        }
+
+        [data-theme="dark"] .evidence-item {
+            border-bottom-color: #FFF;
+        }
+
+        [data-theme="dark"] .evidence-item .content {
+            color: #FFF;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header (Identical) -->
+    <header class="navbar navbar-expand-lg sticky-top">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                <svg width="40" height="40" viewBox="0 0 200 200" class="me-2">
+                    <circle cx="100" cy="100" r="90" fill="none" stroke="#E8634A" stroke-width="10" />
+                    <path d="M60 80 Q100 60 140 80 Q160 120 100 150 Q40 120 60 80" fill="#E8634A" />
+                </svg>
+                <span class="h4 mb-0 fw-800 brand-text" style="font-family:'Outfit'">LinguaBridge</span>
+            </a>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Explore</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="home-2.html">Global</a></li>
+                    <li class="nav-item"><a class="nav-link" href="pricing.html">Plans</a></li>
+                    <li class="nav-item"><a class="nav-link" href="services.html">Skills</a></li>
+                    <li class="nav-item"><a class="nav-link" href="blog.html">Journal</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Connect</a></li>
+                </ul>
+                <div class="d-flex align-items-center gap-3">
+                    <button class="btn btn-link p-0 text-black theme-toggle-btn"><i
+                            class="bi bi-moon-fill theme-toggle-icon"></i></button>
+                    <button class="btn btn-link p-0 text-black rtl-toggle-btn"><i class="bi bi-translate"></i></button>
+                    <a href="dashboard.html" class="btn btn-primary fw-bold">Access</a>
+                    <a href="register.html" class="btn btn-primary fw-bold">Join Us</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Section: Map Visualization -->
+        <section class="map-section section-inverted text-center">
+            <div class="container">
+                <h1 class="display-3 fw-800 mb-4">43 Languages. 190 Countries.</h1>
+                <p class="h4 mb-5 fw-bold text-primary text-uppercase tracking-widest">Global Classroom in Motion.</p>
+                <div class="position-relative">
+                    <svg class="map-svg" viewBox="0 0 1000 500">
+                        <circle cx="500" cy="250" r="230" fill="none" stroke="white" stroke-width="2" opacity="0.3" />
+                        <circle cx="500" cy="250" r="180" fill="none" stroke="white" stroke-width="1" opacity="0.2" />
+                        <path fill="white" d="M100 100 Q500 0 900 100 Q1000 250 900 400 Q500 500 100 400 Q0 250 100 100"
+                            opacity="0.1" />
+                    </svg>
+                    <!-- Pulsing Dots with Bootstrap Tooltips -->
+                    <div class="pulsing-dot" style="top: 30%; left: 20%;" data-bs-toggle="tooltip"
+                        title="BERLIN: 12 MEMBERS ACTIVE"></div>
+                    <div class="pulsing-dot" style="top: 55%; left: 48%;" data-bs-toggle="tooltip"
+                        title="CAIRO: 08 MEMBERS ACTIVE"></div>
+                    <div class="pulsing-dot" style="top: 42%; left: 75%;" data-bs-toggle="tooltip"
+                        title="TOKYO: 25 MEMBERS ACTIVE"></div>
+                    <div class="pulsing-dot" style="top: 75%; left: 32%;" data-bs-toggle="tooltip"
+                        title="SÃO PAULO: 15 MEMBERS ACTIVE"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section: Why Tandem Works (2-column strict) -->
+        <section class="section-padding border-bottom border-4 border-primary">
+            <div class="container">
+                <div class="row g-5 align-items-center">
+                    <div class="col-lg-6">
+                        <h2 class="display-4 fw-800 mb-4">Science of Tandem.</h2>
+                        <p class="h5 fw-bold text-black opacity-75">Visualizing the neuro-linguistic impact of human
+                            peer-to-peer exchange.</p>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="evidence-list">
+                            <div class="evidence-item active" onclick="this.classList.toggle('active')">
+                                <h4 class="mb-0 fw-800">90% RETAIN MORE TEACHING</h4>
+                                <div class="content">Explaining concepts to your partner reinforces your own memory.
+                                    (Source: NTL Institute Learning Pyramid).</div>
+                            </div>
+                            <div class="evidence-item" onclick="this.classList.toggle('active')">
+                                <h4 class="mb-0">ACCELERATED SOCIAL FEEDBACK</h4>
+                                <div class="content">Human-led correction is 4x more effective than app repetitive
+                                    drills for long-term fluency.</div>
+                            </div>
+                            <div class="evidence-item" onclick="this.classList.toggle('active')">
+                                <h4 class="mb-0">CONTEXTUAL BRAIN MAPPING</h4>
+                                <div class="content">Shared storytelling creates stronger mental hooks than rote
+                                    memorization.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section: Success Story (2-column strict split) -->
+        <section class="section-padding-small">
+            <div class="container py-lg-5">
+                <div class="split-card row g-0">
+                    <div class="col-md-6 split-side before">
+                        <img src="assets/images/user-kira.jpg" alt="Kira before LinguaBridge"
+                            class="img-fluid mb-4 border-2 border-black">
+                        <span class="badge bg-black text-white p-2 px-3 fw-bold mb-4">YEAR 2023</span>
+                        <h3 class="display-6 fw-800 text-uppercase">Kira (Kyiv)</h3>
+                        <p class="h5 fw-bold text-black opacity-75 mt-3">"I was terrified to speak German. Every time I
+                            opened my mouth, the grammar froze."</p>
+                    </div>
+                    <div class="col-md-6 split-side">
+                        <img src="assets/images/user-kira-success.jpg" alt="Kira after LinguaBridge"
+                            class="img-fluid mb-4 border-2 border-black">
+                        <span class="badge bg-primary p-2 px-3 fw-bold mb-4">YEAR 2026</span>
+                        <h3 class="display-6 fw-800 text-uppercase">B2 FLUENCY</h3>
+                        <p class="h5 fw-bold text-black opacity-60 mt-3">"120 sessions later, I gave my first
+                            presentation in Berlin. LinguaBridge gave me context."</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section: CTA (Zero-Grey) -->
+        <section class="section-inverted section-padding text-center">
+            <div class="container">
+                <h2 class="display-3 mb-5 fw-800">Ready to speak?</h2>
+                <div class="row justify-content-center">
+                    <div class="col-lg-6">
+                        <div class="input-group mb-4">
+                            <input type="email"
+                                class="form-control border-2 border-white rounded-0 p-3 bg-black text-white"
+                                placeholder="ENTER EMAIL ADDRESS">
+                            <button class="btn btn-primary px-5 fw-bold" type="button">JOIN FREE</button>
+                        </div>
+                        <p class="text-white fw-bold">No credit cards. Zero spam. Pure connection.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer border-top border-4 border-primary footer-padding">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-md-6 col-lg-3">
+                    <a class="d-flex align-items-center mb-4" href="index.html">
+                        <svg width="40" height="40" viewBox="0 0 200 200" class="me-2">
+                            <circle cx="100" cy="100" r="90" fill="none" stroke="#E8634A" stroke-width="10" />
+                            <path d="M60 80 Q100 60 140 80 Q160 120 100 150 Q40 120 60 80" fill="#E8634A" />
+                        </svg>
+                        <span class="h4 mb-0 fw-800 text-black">LinguaBridge</span>
+                    </a>
+                    <p class="text-black fw-bold mb-4">The world's most human language exchange community Connecting
+                        learners globally.</p>
+                    <div class="d-flex gap-4">
+                        <a href="#"><i class="bi bi-twitter-x fs-4 text-black"></i></a>
+                        <a href="#"><i class="bi bi-instagram fs-4 text-black"></i></a>
+                        <a href="#"><i class="bi bi-linkedin fs-4 text-black"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <h6 class="fw-800 text-uppercase tracking-widest mb-4">Explore</h6>
+                    <ul class="list-unstyled d-grid gap-3">
+                        <li><a href="index.html" class="fw-bold text-inherit">Explore</a></li>
+                        <li><a href="home-2.html" class="fw-bold text-inherit">Global View</a></li>
+                        <li><a href="pricing.html" class="fw-bold text-inherit">Plans List</a></li>
+                        <li><a href="services.html" class="fw-bold text-inherit">Skills</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <h6 class="fw-800 text-uppercase tracking-widest mb-4">Support</h6>
+                    <ul class="list-unstyled d-grid gap-3">
+                        <li><a href="contact.html" class="fw-bold text-inherit">Contact</a></li>
+                        <li><a href="about.html" class="fw-bold text-inherit">Our Story</a></li>
+                        <li><a href="#" class="fw-bold text-inherit">FAQ</a></li>
+                        <li><a href="#" class="fw-bold text-inherit">Privacy</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-6 col-lg-5">
+                    <h6 class="fw-800 text-uppercase tracking-widest mb-4">Newsletter</h6>
+                    <p class="text-black fw-bold small mb-4">Stay updated with language tips and success stories.</p>
+                    <form class="d-flex gap-2">
+                        <input type="email"
+                            class="form-control border-2 border-black rounded-0 p-2 bg-white text-black fw-bold"
+                            placeholder="Email Address">
+                        <button class="btn btn-primary px-4 fw-bold">JOIN</button>
+                    </form>
+                </div>
+            </div>
+            <div
+                class="border-top border-2 border-black mt-5 pt-5 d-flex flex-column flex-md-row justify-content-between align-items-center">
+                <p class="fw-800 text-black mb-0">© 2026 LINGUABRIDGE. ALL RIGHTS RESERVED.</p>
+                <a href="#" class="btn btn-primary btn-sm px-4 fw-bold mt-4 mt-md-0">TOP SCROLL</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>

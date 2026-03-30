@@ -1,0 +1,41 @@
+[dir="rtl"] {
+    text-align: right;
+    direction: rtl;
+}
+
+[dir="rtl"] .ms-auto {
+    margin-right: auto !important;
+    margin-left: 0 !important;
+}
+
+[dir="rtl"] .me-auto {
+    margin-left: auto !important;
+    margin-right: 0 !important;
+}
+
+[dir="rtl"] .text-start {
+    text-align: right !important;
+}
+
+[dir="rtl"] .text-end {
+    text-align: left !important;
+}
+
+[dir="rtl"] .ps-0 {
+    padding-right: 0 !important;
+}
+
+[dir="rtl"] .pe-0 {
+    padding-left: 0 !important;
+}
+
+[dir="rtl"] .sidebar {
+    left: auto;
+    right: 0;
+    border-left: 1px solid #EEE;
+    border-right: none;
+}
+
+[dir="rtl"] [data-theme="dark"] .sidebar {
+    border-left-color: #333;
+}

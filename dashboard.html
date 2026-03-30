@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light" dir="ltr">
+<head>
+    <!-- Core Meta -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal | LinguaBridge - Dashboard</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><circle cx=%2250%22 cy=%2250%22 r=%2245%22 fill=%22none%22 stroke=%22%23E8634A%22 stroke-width=%225%22/><path d=%22M30 40 Q50 30 70 40 Q80 60 50 75 Q20 60 30 40%22 fill=%22%23E8634A%22/></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&family=Outfit:wght@700;800&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/dark-mode.css">
+    <link rel="stylesheet" href="assets/css/rtl.css">
+
+    <style>
+        body { background-color: var(--bg-color); color: var(--text-color); }
+        .dashboard-wrapper { display: flex; min-height: 100vh; }
+        .sidebar { width: 300px; background: var(--bg-color); border-right: 4px solid var(--border-color); position: fixed; height: 100vh; padding: 40px; z-index: 100; transition: var(--transition); display: flex; flex-direction: column; }
+        .sidebar-content { flex: 1; overflow-y: auto; margin: 20px 0; scrollbar-width: thin; }
+        .sidebar-content::-webkit-scrollbar { width: 4px; }
+        .sidebar-content::-webkit-scrollbar-thumb { background: var(--primary-color); }
+        .main-content { flex: 1; margin-left: 300px; padding: 60px; background-color: var(--bg-color); }
+        .sidebar-link { display: flex; align-items: center; padding: 15px 20px; color: var(--text-color); border: 2px solid transparent; border-radius: 0; margin-bottom: 10px; transition: var(--transition); text-decoration: none; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; }
+        .sidebar-link i { margin-right: 15px; font-size: 20px; }
+        .sidebar-link:hover, .sidebar-link.active { border-color: var(--border-color); color: var(--primary-color); background: var(--bg-color); }
+        .stat-card { background: var(--bg-color); padding: 40px; border: 4px solid var(--border-color); text-align: center; color: var(--text-color); }
+        .dashboard-section { display: none; }
+        .dashboard-section.active { display: block; }
+        @media (max-width: 1100px) {
+            .sidebar { transform: translateX(-100%); width: 280px; }
+            .sidebar.mobile-open { transform: translateX(0); }
+            .main-content { margin-left: 0; padding: 30px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="dashboard-wrapper">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <a href="index.html" class="d-flex align-items-center mb-5 text-decoration-none">
+                <svg width="40" height="40" viewBox="0 0 200 200" class="me-2">
+                    <circle cx="100" cy="100" r="90" fill="none" stroke="#E8634A" stroke-width="10"/>
+                    <path d="M60 80 Q100 60 140 80 Q160 120 100 150 Q40 120 60 80" fill="#E8634A"/>
+                </svg>
+                <span class="h4 mb-0 fw-800 text-inherit px-0" style="font-family:'Outfit'">Portal</span>
+            </a>
+
+            <div class="sidebar-content">
+                <nav class="d-grid gap-1">
+                    <a href="#" class="sidebar-link active" data-tab="overview"><i class="bi bi-grid-fill"></i> SESSIONS</a>
+                    <a href="#" class="sidebar-link" data-tab="profile"><i class="bi bi-person-fill"></i> PROFILE</a>
+                    <a href="#" class="sidebar-link" data-tab="matching"><i class="bi bi-people-fill"></i> PARTNERS</a>
+                    <a href="#" class="sidebar-link" data-tab="calls"><i class="bi bi-telephone-fill"></i> BOOK CALL</a>
+                    <a href="#" class="sidebar-link" data-tab="progress"><i class="bi bi-bar-chart-fill"></i> PROGRESS</a>
+                    <a href="#" class="sidebar-link" data-tab="messages"><i class="bi bi-chat-fill"></i> MESSAGES</a>
+                    <a href="#" class="sidebar-link" data-tab="settings"><i class="bi bi-gear-fill"></i> SETTINGS</a>
+                </nav>
+            </div>
+
+            <div class="mt-auto pt-5">
+                <div class="d-flex gap-2 mb-4">
+                    <button class="btn btn-outline border-2 w-100 p-3 theme-toggle-btn"><i class="bi bi-moon-fill theme-toggle-icon"></i></button>
+                    <button class="btn btn-outline border-2 w-100 p-3 rtl-toggle-btn"><i class="bi bi-translate"></i></button>
+                </div>
+                <a href="login.html" class="sidebar-link text-primary border-primary"><i class="bi bi-box-arrow-left"></i> LOGOUT</a>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            
+            <!-- Section: Overview (Strict 2x2 Grid) -->
+            <div id="overview" class="dashboard-section active">
+                <h2 class="display-4 fw-800 mb-5">Hello, User.</h2>
+                <div class="row g-5 mb-5">
+                    <div class="col-md-6">
+                        <div class="stat-card">
+                            <h6 class="fw-800 text-primary tracking-widest uppercase mb-3">Live Sessions</h6>
+                            <h2 class="display-2 fw-800 mb-0">12</h2>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="stat-card">
+                            <h6 class="fw-800 text-primary tracking-widest uppercase mb-3">Total Hours</h6>
+                            <h2 class="display-2 fw-800 mb-0">15.5</h2>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="stat-card">
+                            <h6 class="fw-800 text-primary tracking-widest uppercase mb-3">Day Streak</h6>
+                            <h2 class="display-2 fw-800 mb-0">05</h2>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="stat-card">
+                            <h6 class="fw-800 text-primary tracking-widest uppercase mb-3">Peer Rating</h6>
+                            <h2 class="display-2 fw-800 mb-0">4.9</h2>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="border-4 border-primary p-5 bg-transparent mb-5 card">
+                    <h4 class="fw-800 mb-4 px-0">UPCOMING SESSION</h4>
+                    <div class="row align-items-center g-4">
+                         <div class="col-md-6 d-flex align-items-center">
+                            <img src="assets/images/team-sara.jpg" alt="Partner Avatar" style="width:70px; height:70px; object-fit: cover;" class="me-4 border-2 border-black">
+                            <div>
+                                <h5 class="mb-0 fw-800 text-uppercase">Elena Madrid</h5>
+                                <p class="small fw-bold text-inherit opacity-60 mb-0">SPANISH ↔ ENGLISH</p>
+                            </div>
+                         </div>
+                         <div class="col-md-6 text-md-end">
+                            <h5 class="fw-800 mb-2">OCT 15, 14:00</h5>
+                            <button class="btn btn-primary px-4 fw-800">JOIN ROOM</button>
+                         </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section: Profile (Strict 2-column wide layout) -->
+            <div id="profile" class="dashboard-section">
+                <h2 class="display-4 fw-800 mb-5 text-uppercase">Profile Identity</h2>
+                <div class="border-4 border-primary p-5 bg-transparent card">
+                    <div class="row g-5">
+                        <div class="col-md-6">
+                            <h6 class="fw-800 tracking-widest text-primary mb-3">I SPEAK:</h6>
+                            <div class="d-flex gap-2 mb-4 flex-wrap">
+                                <span class="badge border border-2 border-primary text-inherit p-3 fw-bold">ENGLISH (NATIVE)</span>
+                                <span class="badge border border-2 border-primary text-inherit p-3 fw-bold">HINDI (B2)</span>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <h6 class="fw-800 tracking-widest text-primary mb-3">I'M LEARNING:</h6>
+                            <div class="d-flex gap-2 mb-4 flex-wrap">
+                                <span class="badge bg-primary p-3 fw-bold">JAPANESE (A2)</span>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                             <label class="form-label fw-800 small tracking-widest uppercase mb-3">PERSONAL BIO</label>
+                             <textarea class="form-control border-3 border-primary p-3 bg-transparent text-inherit fw-bold" rows="4">Language enthusiast from Chicago. Looking for regular Japanese practice specifically focusing on cultural context!</textarea>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label fw-800 small tracking-widest uppercase mb-3">GLOBAL TIMEZONE</label>
+                            <select class="form-select border-3 border-primary p-3 bg-transparent text-inherit fw-bold">
+                                <option>GMT -05:00 (CENTRAL)</option>
+                            </select>
+                        </div>
+                        <div class="col-12 text-end">
+                            <button class="btn btn-primary px-5 py-3 fw-800">SAVE IDENTITY</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Other placeholders (Strict Zero-Grey) -->
+            <div id="progress" class="dashboard-section">
+                <h2 class="display-4 fw-800 mb-5">TARGET PROGRESS</h2>
+                <div class="border-4 border-primary p-5 bg-transparent card">
+                    <h4 class="fw-800 mb-4 px-0">JAPANESE JOURNEY (A2)</h4>
+                    <div class="progress border-2 border-primary rounded-0 mb-4" style="height:30px; background:transparent;">
+                        <div class="progress-bar bg-primary" style="width: 45%"></div>
+                    </div>
+                    <div class="d-flex justify-content-between h6 fw-800 text-uppercase tracking-widest">
+                        <span>A1 BEGINNER</span>
+                        <span>B1 ADVANCED</span>
+                    </div>
+                </div>
+            </div>
+
+            <div id="matching" class="dashboard-section text-center py-5">
+                <i class="bi bi-people-fill display-1 text-primary mb-5"></i>
+                <h2 class="fw-800 text-uppercase">Partner Search</h2>
+                <p class="h5 fw-bold text-inherit opacity-60">Waitlist active. Refining global matching logic.</p>
+            </div>
+            
+            <div id="calls" class="dashboard-section text-center py-5">
+                <i class="bi bi-calendar-event-fill display-1 text-primary mb-5"></i>
+                <h2 class="fw-800 text-uppercase">Session Booking</h2>
+                <p class="h5 fw-bold text-inherit opacity-60">Opening November 2026. Stay tuned.</p>
+            </div>
+
+            <div id="messages" class="dashboard-section">
+                 <h2 class="display-4 fw-800 mb-5">MESSAGES</h2>
+                 <div class="d-grid gap-4">
+                    <div class="p-4 bg-transparent border-4 border-primary d-flex justify-content-between align-items-center card">
+                        <div>
+                            <h5 class="mb-1 fw-800">YUKI SATO</h5>
+                            <p class="h6 fw-bold text-inherit opacity-75 mb-0">Are we still on for Tuesday's call?</p>
+                        </div>
+                        <span class="fw-800 text-primary small">2H AGO</span>
+                    </div>
+                    <div class="p-4 bg-white border-4 border-black d-flex justify-content-between align-items-center opacity-60">
+                        <div>
+                            <h5 class="mb-1 fw-800">AHMED C.</h5>
+                            <p class="h6 fw-bold text-black opacity-75 mb-0">Thanks for the session review!</p>
+                        </div>
+                        <span class="fw-800 text-primary small">1D AGO</span>
+                    </div>
+                 </div>
+            </div>
+
+            <div id="settings" class="dashboard-section">
+                <h2 class="display-4 fw-800 mb-5 font-uppercase">SETTINGS</h2>
+                <div class="border-4 border-primary p-5 bg-transparent text-inherit card">
+                    <div class="form-check form-switch mb-5">
+                        <input class="form-check-input border-2 border-primary" type="checkbox" id="emailNotif" checked>
+                        <label class="form-check-label fw-800 h5 ms-3" for="emailNotif">EMAIL ALERTS</label>
+                    </div>
+                    <div class="form-check form-switch mb-5">
+                        <input class="form-check-input border-2 border-black" type="checkbox" id="profileVis">
+                        <label class="form-check-label fw-800 h5 ms-3" for="profileVis">PUBLIC VISIBILITY</label>
+                    </div>
+                    <button class="btn btn-primary px-5 py-3 fw-800">UPDATE PREFERENCES</button>
+                </div>
+            </div>
+
+        </main>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/dashboard.js"></script>
+</body>
+</html>

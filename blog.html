@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light" dir="ltr">
+<head>
+    <!-- Core Meta -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Journal | LinguaBridge - Learning Insights</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><circle cx=%2250%22 cy=%2250%22 r=%2245%22 fill=%22none%22 stroke=%22%23E8634A%22 stroke-width=%225%22/><path d=%22M30 40 Q50 30 70 40 Q80 60 50 75 Q20 60 30 40%22 fill=%22%23E8634A%22/></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&family=Outfit:wght@700;800&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/dark-mode.css">
+    <link rel="stylesheet" href="assets/css/rtl.css">
+    <style>
+        .blog-card { padding: 40px; }
+        .blog-card:hover { border-color: var(--primary-color) !important; }
+        .tag-filter { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 50px; }
+        .tag { border: 2px solid var(--border-color); padding: 10px 20px; font-weight: 800; text-transform: uppercase; cursor: pointer; background: var(--bg-color); color: var(--text-color); }
+        .tag.active { background: var(--primary-color); color: #FFF; border-color: var(--primary-color); }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="navbar navbar-expand-lg sticky-top">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                <svg width="40" height="40" viewBox="0 0 200 200" class="me-2">
+                    <circle cx="100" cy="100" r="90" fill="none" stroke="#E8634A" stroke-width="10"/>
+                    <path d="M60 80 Q100 60 140 80 Q160 120 100 150 Q40 120 60 80" fill="#E8634A"/>
+                </svg>
+                <span class="h4 mb-0 fw-800 brand-text" style="font-family:'Outfit'">LinguaBridge</span>
+            </a>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Explore</a></li>
+                    <li class="nav-item"><a class="nav-link" href="home-2.html">Global</a></li>
+                    <li class="nav-item"><a class="nav-link" href="pricing.html">Plans</a></li>
+                    <li class="nav-item"><a class="nav-link" href="services.html">Skills</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="blog.html">Journal</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">Story</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Connect</a></li>
+                </ul>
+                <div class="d-flex align-items-center gap-3">
+                    <button class="btn btn-link p-0 text-black theme-toggle-btn"><i class="bi bi-moon-fill theme-toggle-icon fs-5"></i></button>
+                    <button class="btn btn-link p-0 text-black rtl-toggle-btn"><i class="bi bi-translate fs-5"></i></button>
+                    <a href="dashboard.html" class="btn btn-primary fw-bold">Access</a>
+                    <a href="register.html" class="btn btn-primary fw-bold">Join Us</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="section-padding">
+            <div class="container">
+                <h2 class="display-3 fw-800 text-center mb-5">Journal Insights</h2>
+                <!-- Search & Filter -->
+                <div class="row mb-5 g-4 align-items-center">
+                    <div class="col-md-6">
+                        <div class="input-group">
+                            <input type="text" class="form-control border-3 border-black p-3 fw-bold bg-white text-black" placeholder="SEARCH STORIES...">
+                        </div>
+                    </div>
+                </div>
+                <div class="tag-filter">
+                    <span class="tag active">All</span>
+                    <span class="tag">Grammar</span>
+                    <span class="tag">Culture</span>
+                    <span class="tag">Fluency</span>
+                    <span class="tag">Tips</span>
+                </div>
+
+                <!-- Blog Posts (Refactored to 2nd column strict) -->
+                <div class="row g-5">
+                    <div class="col-md-6">
+                        <div class="blog-card card h-100">
+                            <img src="assets/images/blog-slang.jpg" alt="Native Slang" class="img-fluid border-4 border-primary mb-4">
+                            <span class="badge bg-primary p-2 px-3 fw-bold mb-4">CULTURE</span>
+                            <h3 class="fw-800 mb-3 text-uppercase">5 secrets to native slang</h3>
+                            <p class="h5 fw-bold opacity-75">Mastering the colloquialisms and nuances that books never teach you.</p>
+                            <p class="small fw-800 text-primary mt-4 text-uppercase">OCT 15, 2026 • 5 MIN READ</p>
+                            <a href="blog-details.html" class="btn btn-link p-0 text-primary fw-800 text-decoration-none mt-4">READ MORE →</a>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="blog-card h-100">
+                            <img src="assets/images/blog-tandem.jpg" alt="Tandem Acceleration" class="img-fluid border-4 border-black mb-4">
+                            <span class="badge bg-primary p-2 px-3 fw-bold mb-4">FLUENCY</span>
+                            <h3 class="fw-800 mb-3 text-uppercase">Tandem acceleration</h3>
+                            <p class="h5 fw-bold opacity-75">Why peer-to-peer exchange is 4x faster for achieving fluid conversation.</p>
+                            <p class="small fw-800 text-primary mt-4 text-uppercase">OCT 12, 2026 • 8 MIN READ</p>
+                            <a href="blog-details.html" class="btn btn-link p-0 text-primary fw-800 text-decoration-none mt-4">READ MORE →</a>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="blog-card h-100">
+                            <img src="assets/images/blog-grammar.jpg" alt="Grammar Tips" class="img-fluid border-4 border-black mb-4">
+                            <span class="badge bg-primary p-2 px-3 fw-bold mb-4">GRAMMAR</span>
+                            <h3 class="fw-800 mb-3 text-uppercase">Stop overthinking tense</h3>
+                            <p class="h5 fw-bold opacity-75">Focus on communication over perfection to unlock your latent language potential.</p>
+                            <p class="small fw-800 text-primary mt-4 text-uppercase">OCT 08, 2026 • 12 MIN READ</p>
+                            <a href="blog-details.html" class="btn btn-link p-0 text-primary fw-800 text-decoration-none mt-4">READ MORE →</a>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="blog-card h-100">
+                            <img src="assets/images/blog-tips.jpg" alt="Session Prep" class="img-fluid border-4 border-black mb-4">
+                            <span class="badge bg-primary p-2 px-3 fw-bold mb-4">TIPS</span>
+                            <h3 class="fw-800 mb-3 text-uppercase">Preparing for sessions</h3>
+                            <div class="h5 fw-bold opacity-75">Build a 10-minute ritual to get the absolute most from every conversation.</div>
+                            <p class="small fw-800 text-primary mt-4 text-uppercase">OCT 05, 2026 • 4 MIN READ</p>
+                            <a href="blog-details.html" class="btn btn-link p-0 text-primary fw-800 text-decoration-none mt-4">READ MORE →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer border-top border-4 border-primary footer-padding">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-md-6 col-lg-3">
+                    <a class="d-flex align-items-center mb-4" href="index.html">
+                        <svg width="40" height="40" viewBox="0 0 200 200" class="me-2">
+                            <circle cx="100" cy="100" r="90" fill="none" stroke="#E8634A" stroke-width="10"/>
+                            <path d="M60 80 Q100 60 140 80 Q160 120 100 150 Q40 120 60 80" fill="#E8634A"/>
+                        </svg>
+                        <span class="h4 mb-0 fw-800 text-black">LinguaBridge</span>
+                    </a>
+                    <p class="text-black fw-bold mb-4">The world's most human language exchange community Connecting learners globally.</p>
+                    <div class="d-flex gap-4">
+                        <a href="#"><i class="bi bi-twitter-x fs-4 text-black"></i></a>
+                        <a href="#"><i class="bi bi-instagram fs-4 text-black"></i></a>
+                        <a href="#"><i class="bi bi-linkedin fs-4 text-black"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <h6 class="fw-800 text-uppercase tracking-widest mb-4">Explore</h6>
+                    <ul class="list-unstyled d-grid gap-3">
+                        <li><a href="index.html" class="fw-bold text-inherit">Explore</a></li>
+                        <li><a href="home-2.html" class="fw-bold text-inherit">Global View</a></li>
+                        <li><a href="pricing.html" class="fw-bold text-inherit">Plans List</a></li>
+                        <li><a href="services.html" class="fw-bold text-inherit">Skills</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <h6 class="fw-800 text-uppercase tracking-widest mb-4">Support</h6>
+                    <ul class="list-unstyled d-grid gap-3">
+                        <li><a href="contact.html" class="fw-bold text-inherit">Contact</a></li>
+                        <li><a href="about.html" class="fw-bold text-inherit">Our Story</a></li>
+                        <li><a href="#" class="fw-bold text-inherit">FAQ</a></li>
+                        <li><a href="#" class="fw-bold text-inherit">Privacy</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <h6 class="fw-800 text-uppercase tracking-widest mb-4">Newsletter</h6>
+                    <p class="fw-bold small mb-4">Stay updated with language tips and success stories.</p>
+                    <form class="d-flex gap-2">
+                        <input type="email" class="form-control border-2 border-primary rounded-0 p-2 bg-transparent text-inherit fw-bold" placeholder="Email Address">
+                        <button class="btn btn-primary px-4 fw-bold">JOIN</button>
+                    </form>
+                </div>
+            </div>
+            <div class="border-top border-2 border-black mt-5 pt-5 d-flex flex-column flex-md-row justify-content-between align-items-center">
+                <p class="fw-800 text-black mb-0">© 2026 LINGUABRIDGE. ALL RIGHTS RESERVED.</p>
+                <a href="#" class="btn btn-primary btn-sm px-4 fw-bold mt-4 mt-md-0">TOP SCROLL</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

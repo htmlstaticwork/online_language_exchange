@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light" dir="ltr">
+<head>
+    <!-- Core Meta -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Story | LinguaBridge - Our Mission</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><circle cx=%2250%22 cy=%2250%22 r=%2245%22 fill=%22none%22 stroke=%22%23E8634A%22 stroke-width=%225%22/><path d=%22M30 40 Q50 30 70 40 Q80 60 50 75 Q20 60 30 40%22 fill=%22%23E8634A%22/></svg>">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&family=Outfit:wght@700;800&display=swap" rel="stylesheet">
+    
+    <!-- Bootstrap & Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/dark-mode.css">
+    <link rel="stylesheet" href="assets/css/rtl.css">
+
+    <style>
+        .timeline { position: relative; padding: 60px 0; }
+        .timeline::before { content: ''; position: absolute; left: 50%; top: 0; bottom: 0; width: 4px; background: #000; transform: translateX(-50%); }
+        .timeline-item { display: flex; justify-content: flex-end; padding-right: 50%; position: relative; margin-bottom: 80px; }
+        .timeline-item.right { justify-content: flex-start; padding-right: 0; padding-left: 50%; }
+        .timeline-content { width: 85%; background: #FFF; padding: 40px; border: 4px solid #000; border-radius: 0; position: relative; }
+        .timeline-dot { position: absolute; right: -12px; top: 40px; width: 24px; height: 24px; background: var(--primary-color); border: 4px solid #FFF; border-radius: 50%; transform: translateX(50%); z-index: 2; }
+        .timeline-item.right .timeline-dot { right: auto; left: -12px; transform: translateX(-50%); }
+        [data-theme="dark"] .timeline-content { background: #000; border-color: #FFF; }
+        [data-theme="dark"] .timeline-dot { border-color: #000; }
+        [data-theme="dark"] .timeline::before { background: #FFF; }
+        @media (max-width: 768px) {
+            .timeline::before { left: 30px; }
+            .timeline-item, .timeline-item.right { padding-left: 60px; padding-right: 0; justify-content: flex-start; }
+            .timeline-dot { left: -12px; right: auto; transform: translateX(50%); }
+            .timeline-content { width: 100%; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header (Identical) -->
+    <header class="navbar navbar-expand-lg sticky-top">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                <svg width="40" height="40" viewBox="0 0 200 200" class="me-2">
+                    <circle cx="100" cy="100" r="90" fill="none" stroke="#E8634A" stroke-width="10"/>
+                    <path d="M60 80 Q100 60 140 80 Q160 120 100 150 Q40 120 60 80" fill="#E8634A"/>
+                </svg>
+                <span class="h4 mb-0 fw-800 brand-text" style="font-family:'Outfit'">LinguaBridge</span>
+            </a>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Explore</a></li>
+                    <li class="nav-item"><a class="nav-link" href="home-2.html">Global</a></li>
+                    <li class="nav-item"><a class="nav-link" href="pricing.html">Plans</a></li>
+                    <li class="nav-item"><a class="nav-link" href="services.html">Skills</a></li>
+                    <li class="nav-item"><a class="nav-link" href="blog.html">Journal</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="about.html">Story</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Connect</a></li>
+                </ul>
+                <div class="d-flex align-items-center gap-3">
+                    <button class="btn btn-link p-0 text-black theme-toggle-btn"><i class="bi bi-moon-fill theme-toggle-icon"></i></button>
+                    <button class="btn btn-link p-0 text-black rtl-toggle-btn"><i class="bi bi-translate"></i></button>
+                    <a href="dashboard.html" class="btn btn-primary fw-bold">Access</a>
+                    <a href="register.html" class="btn btn-primary fw-bold">Join Us</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Section: Timeline (Vertical Alternating) -->
+        <section class="section-padding border-bottom border-4 border-primary">
+            <div class="container">
+                <div class="text-center mb-5">
+                    <h2 class="display-3 fw-800">Our Story</h2>
+                    <p class="h5 fw-bold text-primary text-uppercase tracking-widest">From Dorm Room to Global Hub.</p>
+                </div>
+                <div class="timeline">
+                    <!-- 2-column alternating naturally handled by JS/CSS layout -->
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <h4 class="text-primary fw-800">2023: THE FIRST SPARK</h4>
+                            <p class="h5 fw-bold mt-3">Founders struggling to find consistent partners lead to a 10-friend Alpha launch.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item right">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <h4 class="text-primary fw-800">2024: TOPIC CARDS LAUNCHED</h4>
+                            <p class="h5 fw-bold mt-3">Breaking small talk barriers. 5,000 members joined across Europe.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <h4 class="text-primary fw-800">2025: GOING GLOBAL</h4>
+                            <p class="h5 fw-bold mt-3">Launched in Asia Hubs and South America. Milestone 20,000 monthly sessions.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section: Mission & Values (Strict 2x2 Grid) -->
+        <section class="section-padding section-inverted border-bottom border-4 border-primary">
+            <div class="container">
+                <h2 class="text-center display-4 fw-800 mb-5">Mission & Core Values</h2>
+                <div class="row g-5">
+                    <div class="col-md-6 border-bottom border-2 border-white pb-5">
+                        <h4 class="fw-800 text-primary">HUMAN FIRST</h4>
+                        <p class="h5 fw-bold opacity-75">Language is empathy and shared stories, not just mathematical algorithms.</p>
+                    </div>
+                    <div class="col-md-6 border-bottom border-2 border-white pb-5">
+                        <h4 class="fw-800 text-primary">RADICAL INCLUSION</h4>
+                        <p class="h5 fw-bold opacity-75">Accessible tools for everyone, regardless of location or financial status.</p>
+                    </div>
+                    <div class="col-md-6 pt-md-5">
+                        <h4 class="fw-800 text-primary">SCIENTIFIC METHODS</h4>
+                        <p class="h5 fw-bold opacity-75">Built on principles of active recall and tandem peer-learning models.</p>
+                    </div>
+                    <div class="col-md-6 pt-md-5">
+                        <h4 class="fw-800 text-primary">CULTURAL EMPATHY</h4>
+                        <p class="h5 fw-bold opacity-75">Authentic dialogue leads to mutual respect across borders.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section: Team (Strict 2x2 Grid) -->
+        <section class="section-padding">
+            <div class="container text-center">
+                <h2 class="display-4 fw-800 mb-5 text-uppercase">The Visionaries</h2>
+                <div class="row g-5">
+                    <div class="col-md-6">
+                        <div class="border-4 border-black p-4 bg-white mb-4">
+                            <img src="assets/images/team-alex.jpg" alt="Alex Chen" class="img-fluid border-4 border-primary mb-4" style="width:250px; height:250px; object-fit: cover;">
+                            <h4 class="fw-800 text-uppercase">Alex Chen</h4>
+                            <p class="text-primary fw-800 small tracking-widest uppercase">Founder & CEO</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="border-4 border-black p-4 bg-white mb-4">
+                            <img src="assets/images/team-sara.jpg" alt="Sara Lopez" class="img-fluid border-4 border-primary mb-4" style="width:250px; height:250px; object-fit: cover;">
+                            <h4 class="fw-800 text-uppercase">Sara Lopez</h4>
+                            <p class="text-primary fw-800 small tracking-widest uppercase">Lead Linguist</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mt-lg-5">
+                        <div class="border-4 border-black p-4 bg-white mb-4">
+                            <img src="assets/images/team-james.jpg" alt="James Miller" class="img-fluid border-4 border-primary mb-4" style="width:250px; height:250px; object-fit: cover;">
+                            <h4 class="fw-800 text-uppercase">James Miller</h4>
+                            <p class="text-primary fw-800 small tracking-widest uppercase">Tech Lead</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mt-lg-5">
+                        <div class="border-4 border-black p-4 bg-white mb-4">
+                            <img src="assets/images/team-yuki.jpg" alt="Yuki Sato" class="img-fluid border-4 border-primary mb-4" style="width:250px; height:250px; object-fit: cover;">
+                            <h4 class="fw-800 text-uppercase">Yuki Sato</h4>
+                            <p class="text-primary fw-800 small tracking-widest uppercase">Growth Head</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section: Partners (Logo strip, strictly 2 columns per row) -->
+        <section class="section-padding section-inverted border-top border-4 border-primary">
+            <div class="container text-center">
+                <p class="fw-800 text-uppercase tracking-widest mb-5">Trusted Educators</p>
+                <div class="row g-5 opacity-75">
+                    <div class="col-6 col-md-3"><h4 class="fw-800">UNI-GLOBAL</h4></div>
+                    <div class="col-6 col-md-3"><h4 class="fw-800">LINGUA-SCH</h4></div>
+                    <div class="col-6 col-md-3"><h4 class="fw-800">VOCAB-LAB</h4></div>
+                    <div class="col-6 col-md-3"><h4 class="fw-800">EDU-TALK</h4></div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer border-top border-4 border-primary footer-padding">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-md-6 col-lg-3">
+                    <a class="d-flex align-items-center mb-4" href="index.html">
+                        <svg width="40" height="40" viewBox="0 0 200 200" class="me-2">
+                            <circle cx="100" cy="100" r="90" fill="none" stroke="#E8634A" stroke-width="10"/>
+                            <path d="M60 80 Q100 60 140 80 Q160 120 100 150 Q40 120 60 80" fill="#E8634A"/>
+                        </svg>
+                        <span class="h4 mb-0 fw-800 text-black">LinguaBridge</span>
+                    </a>
+                    <p class="text-black fw-bold mb-4">The world's most human language exchange community Connecting learners globally.</p>
+                    <div class="d-flex gap-4">
+                        <a href="#"><i class="bi bi-twitter-x fs-4 text-black"></i></a>
+                        <a href="#"><i class="bi bi-instagram fs-4 text-black"></i></a>
+                        <a href="#"><i class="bi bi-linkedin fs-4 text-black"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <h6 class="fw-800 text-uppercase tracking-widest mb-4">Explore</h6>
+                    <ul class="list-unstyled d-grid gap-3">
+                        <li><a href="index.html" class="fw-bold text-inherit">Explore</a></li>
+                        <li><a href="home-2.html" class="fw-bold text-inherit">Global View</a></li>
+                        <li><a href="pricing.html" class="fw-bold text-inherit">Plans List</a></li>
+                        <li><a href="services.html" class="fw-bold text-inherit">Skills</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <h6 class="fw-800 text-uppercase tracking-widest mb-4">Support</h6>
+                    <ul class="list-unstyled d-grid gap-3">
+                        <li><a href="contact.html" class="fw-bold text-inherit">Contact</a></li>
+                        <li><a href="about.html" class="fw-bold text-inherit">Our Story</a></li>
+                        <li><a href="#" class="fw-bold text-inherit">FAQ</a></li>
+                        <li><a href="#" class="fw-bold text-inherit">Privacy</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <h6 class="fw-800 text-uppercase tracking-widest mb-4">Newsletter</h6>
+                    <p class="fw-bold small mb-4">Stay updated with language tips and success stories.</p>
+                    <form class="d-flex gap-2">
+                        <input type="email" class="form-control border-2 border-primary rounded-0 p-2 bg-transparent text-inherit fw-bold" placeholder="Email Address">
+                        <button class="btn btn-primary px-4 fw-bold">JOIN</button>
+                    </form>
+                </div>
+            </div>
+            <div class="border-top border-2 border-black mt-5 pt-5 d-flex flex-column flex-md-row justify-content-between align-items-center">
+                <p class="fw-800 text-black mb-0">© 2026 LINGUABRIDGE. ALL RIGHTS RESERVED.</p>
+                <a href="#" class="btn btn-primary btn-sm px-4 fw-bold mt-4 mt-md-0">TOP SCROLL</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

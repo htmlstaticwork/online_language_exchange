@@ -1,0 +1,180 @@
+:root {
+    --primary-color: #E8634A; /* Warm Coral */
+    --secondary-color: #000;  /* Black */
+    --bg-color: #FFF;         /* White */
+    --text-color: #000;
+    --border-color: #000;     /* Default Border */
+    
+    /* Section specific variables for theme-awareness */
+    --section-bg: var(--bg-color);
+    --section-text: var(--text-color);
+    --section-border: var(--border-color);
+
+    --font-heading: 'Outfit', sans-serif;
+    --font-body: 'Nunito', sans-serif;
+    --transition: 0.3s ease-in-out;
+}
+
+/* Base Styles */
+body {
+    font-family: var(--font-body);
+    font-size: 18px;
+    line-height: 1.5;
+    color: var(--text-color);
+    background-color: var(--bg-color);
+    margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    line-height: 1.25;
+}
+
+h1 {
+    font-size: 48px;
+}
+
+h2 {
+    font-size: 36px;
+}
+
+h3 {
+    font-size: 28px;
+}
+
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+a:hover {
+    opacity: 0.8;
+}
+
+/* Buttons (5-12 chars for text) */
+.btn-primary {
+    background-color: var(--primary-color) !important;
+    border-color: var(--primary-color) !important;
+    color: #FFF !important;
+    padding: 12px 24px;
+    border-radius: 50px;
+    font-family: var(--font-heading);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+    transition: var(--transition);
+    min-height: 44px;
+}
+
+.btn-outline {
+    background-color: transparent !important;
+    border: 2px solid var(--primary-color) !important;
+    color: var(--primary-color) !important;
+    padding: 12px 24px;
+    border-radius: 50px;
+    font-family: var(--font-heading);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+    transition: var(--transition);
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(232, 99, 74, 0.3);
+}
+
+/* Header & Nav */
+.navbar {
+    padding: 20px 0;
+    border-bottom: 2px solid var(--secondary-color);
+    background-color: var(--bg-color);
+    z-index: 1050;
+}
+
+.nav-link {
+    color: var(--secondary-color) !important;
+    font-weight: 700;
+    padding: 10px 15px !important;
+    text-transform: uppercase;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+}
+
+.nav-link.active {
+    color: var(--primary-color) !important;
+}
+
+/* Strict 2-Column Grid Rules (2x1, 2x2, 2x3) */
+.row-cols-12 {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.row-cols-12>* {
+    flex: 0 0 50%;
+    max-width: 50%;
+}
+
+@media (max-width: 768px) {
+    .row-cols-12>* {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+}
+
+/* Custom Sections */
+.section-padding {
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+.footer-padding {
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
+.bg-light-alt {
+    background-color: #FFF;
+}
+
+/* Prompt forbids grey, so light-alt is white */
+.border-light-alt {
+    border-color: var(--secondary-color);
+}
+
+section, .section-padding {
+    background-color: var(--section-bg);
+    color: var(--section-text);
+}
+
+.section-inverted {
+    --section-bg: var(--secondary-color);
+    --section-text: var(--bg-color);
+    --section-border: var(--bg-color);
+}
+
+.card, .stat-card, .frame-card, .matchmaker-box {
+    background-color: var(--section-bg);
+    color: var(--section-text);
+    border: 2px solid var(--section-border) !important;
+}
+
+/* Animations */
+.fade-up {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.6s ease;
+}
+
+.fade-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
