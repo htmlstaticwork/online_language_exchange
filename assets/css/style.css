@@ -34,6 +34,7 @@ h6 {
     font-family: var(--font-heading);
     font-weight: 700;
     line-height: 1.25;
+    color: inherit;
 }
 
 h1 {
@@ -89,6 +90,19 @@ a:hover {
 .btn:hover {
     transform: translateY(-2px);
     box-shadow: 0 4px 15px rgba(232, 99, 74, 0.3);
+}
+
+/* Theme color overrides for Bootstrap utilities */
+.bg-primary {
+    background-color: var(--primary-color) !important;
+}
+
+.text-primary {
+    color: var(--primary-color) !important;
+}
+
+.border-primary {
+    border-color: var(--primary-color) !important;
 }
 
 /* Header & Nav */
@@ -211,8 +225,8 @@ a:hover {
 }
 
 .footer-padding {
-    padding-top: 60px;
-    padding-bottom: 60px;
+    padding-top: 30px;
+    padding-bottom: 30px;
 }
 
 .bg-light-alt {
@@ -236,6 +250,9 @@ section, .section-padding {
 }
 
 .card, .stat-card, .frame-card, .matchmaker-box {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
     background-color: var(--section-bg);
     color: var(--section-text);
     border: 2px solid var(--section-border) !important;

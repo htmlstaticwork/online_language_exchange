@@ -26,9 +26,8 @@
     color: var(--text-color) !important;
 }
 
-[data-theme="dark"] h1, [data-theme="dark"] h2, [data-theme="dark"] h3, [data-theme="dark"] h4, [data-theme="dark"] h5, [data-theme="dark"] h6 {
-    color: var(--text-color);
-}
+
+/* Headings handled by color: inherit in style.css */
 
 [data-theme="dark"] .footer {
     background-color: var(--bg-color);
