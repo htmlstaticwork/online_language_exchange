@@ -13,14 +13,95 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
-<body class="bg-white d-flex align-items-center justify-content-center vh-100 p-4">
+<body class="bg-white">
 
-    <div class="text-center p-5 border-4 border-black" style="max-width: 600px; position: relative; background:#FFF;">
-        <div style="position: absolute; top: 15px; left: 15px; right: -15px; bottom: -15px; border: 4px solid var(--primary-color); z-index: -1;"></div>
-        <h1 class="display-1 fw-800 text-primary mb-4">404</h1>
-        <h2 class="display-6 fw-800 mb-4 text-black text-uppercase">LOST IN TRANSLATION?</h2>
-        <p class="h5 fw-bold text-black opacity-75 mb-5">We couldn't find the page sequence you're searching for. Perhaps it's in a different dialect?</p>
-        <a href="index.html" class="btn btn-primary btn-lg px-5 py-3 fw-800">EXPLORE NOW</a>
+    <header class="navbar navbar-expand-custom sticky-top">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                <svg width="40" height="40" viewBox="0 0 200 200" class="me-2">
+                    <circle cx="100" cy="100" r="90" fill="none" stroke="#E8634A" stroke-width="10" />
+                    <path
+                        d="M100 40 C130 40 160 70 160 100 C160 130 130 160 100 160 C70 160 40 130 40 100 C40 70 70 40 100 40"
+                        fill="none" stroke="#E8634A" stroke-width="6" />
+                    <path d="M60 80 Q100 60 140 80 Q160 120 100 150 Q40 120 60 80" fill="#E8634A" />
+                </svg>
+                <span class="h4 mb-0 fw-800 brand-text" style="font-family:'Outfit'">LinguaBridge</span>
+            </a>
+
+            <!-- Right-aligned Toggler for Mobile -->
+            <button class="navbar-toggler p-2" type="button" data-bs-toggle="offcanvas"
+                data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+                <i class="bi bi-list fs-3"></i>
+            </button>
+
+            <!-- Desktop Navigation (Hidden < 1100px) -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="homeDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Home
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="homeDropdown">
+                            <li><a class="dropdown-item" href="index.html">Explorer</a></li>
+                            <li><a class="dropdown-item" href="home-2.html">Global</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="pricing.html">Plans</a></li>
+                    <li class="nav-item"><a class="nav-link" href="services.html">Skills</a></li>
+                    <li class="nav-item"><a class="nav-link" href="blog.html">Journal</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Connect</a></li>
+                </ul>
+                <div class="d-flex align-items-center gap-3 desktop-nav-buttons">
+                    <button class="btn btn-link p-0 text-black theme-toggle-btn"><i
+                            class="bi bi-moon-fill theme-toggle-icon fs-5"></i></button>
+                    <button class="btn btn-link p-0 text-black rtl-toggle-btn"><i
+                            class="bi bi-translate fs-5"></i></button>
+                    <a href="dashboard.html" class="btn btn-primary fw-bold">Access</a>
+                    <a href="register.html" class="btn btn-primary fw-bold">Join Us</a>
+                </div>
+            </div>
+
+            <!-- Offcanvas Menu (Visible < 1100px) -->
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+                <div class="offcanvas-header border-bottom border-2 border-primary">
+                    <button type="button" class="btn-close text-reset ms-auto" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body d-flex flex-column">
+                    <nav class="navbar-nav gap-2">
+                        <div class="nav-item-group">
+                            <span class="nav-link disabled fw-800 text-primary small mb-1" style="opacity: 1;">HOME</span>
+                            <div class="mobile-submenu d-flex flex-column gap-2">
+                                <a class="nav-link" href="index.html">EXPLORE</a>
+                                <a class="nav-link" href="home-2.html">GLOBAL</a>
+                            </div>
+                        </div>
+                        <a class="nav-link" href="pricing.html">PLANS</a>
+                        <a class="nav-link" href="services.html">SKILLS</a>
+                        <a class="nav-link" href="blog.html">JOURNAL</a>
+                        <a class="nav-link" href="contact.html">CONNECT</a>
+                    </nav>
+                    
+                    <div class="mt-auto pt-5">
+                        <div class="d-flex gap-2 mb-4">
+                            <button class="btn btn-outline border-2 w-100 p-3 theme-toggle-btn"><i class="bi bi-moon-fill theme-toggle-icon"></i></button>
+                            <button class="btn btn-outline border-2 w-100 p-3 rtl-toggle-btn"><i class="bi bi-translate"></i></button>
+                        </div>
+                        <a href="dashboard.html" class="btn btn-primary w-100 py-3 fw-800 mb-3">ACCESS PORTAL</a>
+                        <a href="register.html" class="btn btn-outline border-3 border-primary w-100 py-3 fw-800">JOIN US</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="d-flex align-items-center justify-content-center" style="min-height: 80vh;">
+        <div class="text-center p-5 border-4 border-primary" style="max-width: 600px; position: relative; background:#FFF;">
+            <div style="position: absolute; top: 15px; left: 15px; right: -15px; bottom: -15px; border: 4px solid var(--primary-color); z-index: -1;"></div>
+            <h1 class="display-1 fw-800 text-primary mb-4">404</h1>
+            <h2 class="display-6 fw-800 mb-4 text-black text-uppercase">LOST IN TRANSLATION?</h2>
+            <p class="h5 fw-bold text-black opacity-75 mb-5">We couldn't find the page sequence you're searching for. Perhaps it's in a different dialect?</p>
+            <a href="index.html" class="btn btn-primary btn-lg px-5 py-3 fw-800">RETURN HOME</a>
+        </div>
     </div>
 
 </body>

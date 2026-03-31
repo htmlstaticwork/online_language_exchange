@@ -1,6 +1,6 @@
 /**
  * LinguaBridge - Dashboard Logic
- * Handles tab switching and session-specific states for the Portal (dashboard.html).
+ * Handles tab switching and session-specific states for the Dashboard (dashboard.html).
  */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -11,6 +11,30 @@ document.addEventListener('DOMContentLoaded', () => {
      */
     const tabs = document.querySelectorAll('.sidebar-link[data-tab]');
     const sections = document.querySelectorAll('.dashboard-section');
+
+    /**
+     * Sidebar Mobile Toggle
+     */
+    const sidebarToggle = document.getElementById('sidebar-toggle');
+    const wrapper = document.querySelector('.dashboard-wrapper');
+    const sidebar = document.querySelector('.sidebar');
+    
+    if (sidebarToggle && wrapper && sidebar) {
+        sidebarToggle.addEventListener('click', () => {
+            wrapper.classList.toggle('sidebar-open');
+            sidebar.classList.toggle('mobile-open');
+            
+            // Update icon based on state
+            const icon = sidebarToggle.querySelector('i');
+            if (sidebar.classList.contains('mobile-open')) {
+                icon.classList.remove('bi-list');
+                icon.classList.add('bi-x-lg');
+            } else {
+                icon.classList.remove('bi-x-lg');
+                icon.classList.add('bi-list');
+            }
+        });
+    }
 
     tabs.forEach(tab => {
         tab.addEventListener('click', (e) => {
@@ -29,10 +53,15 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             });
 
-            // On mobile, close sidebar after selection
-            const sidebar = document.querySelector('.sidebar');
-            if (sidebar) {
+            // On mobile, close sidebar after selection and reset icon
+            if (wrapper && sidebar) {
+                wrapper.classList.remove('sidebar-open');
                 sidebar.classList.remove('mobile-open');
+                const icon = sidebarToggle.querySelector('i');
+                if (icon) {
+                    icon.classList.remove('bi-x-lg');
+                    icon.classList.add('bi-list');
+                }
             }
         });
     });
