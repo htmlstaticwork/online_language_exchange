@@ -1,0 +1,19 @@
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+    <!-- Black Background -->
+    <rect width="100%" height="100%" fill="black" />
+
+    <!-- Left Language Bubble -->
+    <path
+        d="M40 80 Q40 40 80 40 Q120 40 120 80 Q120 120 80 120 Q70 120 60 130 Q62 115 55 110 Q40 100 40 80 Z"
+        fill="#E8634A" />
+
+    <!-- Right Language Bubble -->
+    <path
+        d="M80 80 Q80 40 120 40 Q160 40 160 80 Q160 120 120 120 Q110 120 100 130 Q102 115 95 110 Q80 100 80 80 Z"
+        fill="#ff9a84" />
+
+    <!-- Mic -->
+    <rect x="90" y="70" width="20" height="40" rx="10" fill="#ffffff" />
+    <rect x="85" y="110" width="30" height="10" rx="5" fill="#ffffff" />
+    <rect x="95" y="120" width="10" height="20" fill="#ffffff" />
+</svg>

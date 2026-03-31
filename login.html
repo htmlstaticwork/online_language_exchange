@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Access | LinguaBridge - Login</title>
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><circle cx=%2250%22 cy=%2250%22 r=%2245%22 fill=%22none%22 stroke=%22%23E8634A%22 stroke-width=%225%22/><path d=%22M30 40 Q50 30 70 40 Q80 60 50 75 Q20 60 30 40%22 fill=%22%23E8634A%22/></svg>">
+    <link rel="icon" type="image/svg+xml" href="assets/images/logo.svg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&family=Outfit:wght@700;800&display=swap" rel="stylesheet">
@@ -17,99 +17,43 @@
         body { min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 60px 20px; background-color: var(--bg-color); color: var(--text-color); }
         .auth-card { width: 100%; max-width: 440px; padding: 30px; border-radius: 0; position: relative; background-color: var(--bg-color); border: 4px solid var(--border-color); color: var(--text-color); }
         .auth-card::before { content: ''; position: absolute; top: 10px; left: 10px; right: -10px; bottom: -10px; border: 4px solid var(--primary-color); z-index: -1; }
+
+        /* Auth Page Toggles */
+        .auth-toggles { position: fixed; top: 20px; right: 20px; display: flex; gap: 10px; z-index: 1000; }
+        .auth-toggle-btn { width: 45px; height: 45px; border-radius: 0; border: 3px solid var(--border-color); background: var(--bg-color); color: var(--text-color); display: flex; align-items: center; justify-content: center; cursor: pointer; transition: all 0.2s; position: relative; }
+        .auth-toggle-btn:hover { transform: translate(-2px, -2px); box-shadow: 4px 4px 0 var(--primary-color); }
+        .auth-toggle-btn i { font-size: 1.2rem; }
+
+        [dir="rtl"] .auth-toggles { right: auto; left: 20px; }
+
+        @media (max-width: 576px) {
+            .auth-toggles { top: 10px; right: 10px; }
+            .auth-toggle-btn { width: 38px; height: 38px; border-width: 2px; }
+            .auth-toggle-btn i { font-size: 1rem; }
+            .auth-card { padding: 20px; }
+        }
     </style>
 </head>
 <body>
-    <!-- Header (Identical on all pages) -->
-    <header class="navbar navbar-expand-custom sticky-top">
-        <div class="container">
-            <a class="navbar-brand d-flex align-items-center" href="index.html">
-                <svg width="40" height="40" viewBox="0 0 200 200" class="me-2">
-                    <circle cx="100" cy="100" r="90" fill="none" stroke="#E8634A" stroke-width="10"/>
-                    <path d="M60 80 Q100 60 140 80 Q160 120 100 150 Q40 120 60 80" fill="#E8634A"/>
-                </svg>
-                <span class="h4 mb-0 fw-800 brand-text" style="font-family:'Outfit'">LinguaBridge</span>
-            </a>
-
-            <!-- Right-aligned Toggler for Mobile -->
-            <button class="navbar-toggler p-2" type="button" data-bs-toggle="offcanvas"
-                data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
-                <i class="bi bi-list fs-3"></i>
-            </button>
-
-            <!-- Desktop Navigation (Hidden < 1100px) -->
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav mx-auto">
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="homeDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Home
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="homeDropdown">
-                            <li><a class="dropdown-item" href="index.html">Explorer</a></li>
-                            <li><a class="dropdown-item" href="home-2.html">Global</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item"><a class="nav-link" href="pricing.html">Plans</a></li>
-                    <li class="nav-item"><a class="nav-link" href="services.html">Skills</a></li>
-                    <li class="nav-item"><a class="nav-link" href="blog.html">Journal</a></li>
-                    <li class="nav-item"><a class="nav-link" href="contact.html">Connect</a></li>
-                </ul>
-                <div class="d-flex align-items-center gap-3 desktop-nav-buttons">
-                    <button class="btn btn-link p-0 text-black theme-toggle-btn"><i
-                            class="bi bi-moon-fill theme-toggle-icon fs-5"></i></button>
-                    <button class="btn btn-link p-0 text-black rtl-toggle-btn"><i
-                            class="bi bi-translate fs-5"></i></button>
-                    <a href="dashboard.html" class="btn btn-primary fw-bold active">Access</a>
-                    <a href="register.html" class="btn btn-primary fw-bold">Join Us</a>
-                </div>
-            </div>
-
-            <!-- Offcanvas Menu (Visible < 1100px) -->
-            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
-                <div class="offcanvas-header border-bottom border-2 border-primary">
-                    <button type="button" class="btn-close text-reset ms-auto" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                </div>
-                <div class="offcanvas-body d-flex flex-column">
-                    <nav class="navbar-nav gap-2">
-                        <div class="nav-item-group">
-                            <span class="nav-link disabled fw-800 text-primary small mb-1" style="opacity: 1;">HOME</span>
-                            <div class="mobile-submenu d-flex flex-column gap-2">
-                                <a class="nav-link" href="index.html">EXPLORE</a>
-                                <a class="nav-link" href="home-2.html">GLOBAL</a>
-                            </div>
-                        </div>
-                        <a class="nav-link" href="pricing.html">PLANS</a>
-                        <a class="nav-link" href="services.html">SKILLS</a>
-                        <a class="nav-link" href="blog.html">JOURNAL</a>
-                        <a class="nav-link" href="contact.html">CONNECT</a>
-                    </nav>
-                    
-                    <div class="mt-auto pt-5">
-                        <div class="d-flex gap-2 mb-4">
-                            <button class="btn btn-outline border-2 w-100 p-3 theme-toggle-btn"><i class="bi bi-moon-fill theme-toggle-icon"></i></button>
-                            <button class="btn btn-outline border-2 w-100 p-3 rtl-toggle-btn"><i class="bi bi-translate"></i></button>
-                        </div>
-                        <a href="dashboard.html" class="btn btn-primary w-100 py-3 fw-800 mb-3">ACCESS PORTAL</a>
-                        <a href="register.html" class="btn btn-outline border-3 border-primary w-100 py-3 fw-800">JOIN US</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
+    <div class="auth-toggles">
+        <button class="auth-toggle-btn theme-toggle-btn" title="Toggle Theme">
+            <i class="bi bi-moon-fill theme-toggle-icon"></i>
+        </button>
+        <button class="auth-toggle-btn rtl-toggle-btn" title="Toggle RTL">
+            <i class="bi bi-translate"></i>
+        </button>
+    </div>
 
     <div class="auth-card">
         <div class="text-center mb-3">
             <a href="index.html" class="d-inline-flex align-items-center mb-2 text-decoration-none">
-                <svg width="60" height="60" viewBox="0 0 200 200" class="me-2">
-                    <circle cx="100" cy="100" r="90" fill="none" stroke="#E8634A" stroke-width="10"/>
-                    <path d="M60 80 Q100 60 140 80 Q160 120 100 150 Q40 120 60 80" fill="#E8634A"/>
-                </svg>
+                <img src="assets/images/logo.svg" alt="LinguaBridge Logo" width="60" height="60" class="me-2 rounded">
                 <span class="h3 mb-0 fw-800 text-inherit" style="font-family:'Outfit'">LinguaBridge</span>
             </a>
             <h2 class="fw-800 h4 mb-0">Welcome Back</h2>
         </div>
 
-        <div class="d-flex gap-2 mb-3">
+        <div class="d-flex flex-column flex-sm-row gap-2 mb-3">
             <button class="btn btn-outline border-2 w-100 py-3 fw-800 d-flex align-items-center justify-content-center gap-2"><i class="bi bi-google"></i> GOOGLE</button>
             <button class="btn btn-outline border-2 w-100 py-3 fw-800 d-flex align-items-center justify-content-center gap-2"><i class="bi bi-facebook"></i> FACEBOOK</button>
         </div>

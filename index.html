@@ -10,8 +10,7 @@
         content="Join LinguaBridge, the global community for language exchange. Learn by speaking with native partners worldwide.">
 
     <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml"
-        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><circle cx=%2250%22 cy=%2250%22 r=%2245%22 fill=%22none%22 stroke=%22%23E8634A%22 stroke-width=%225%22/><path d=%22M30 40 Q50 30 70 40 Q80 60 50 75 Q20 60 30 40%22 fill=%22%23E8634A%22/></svg>">
+    <link rel="icon" type="image/svg+xml" href="assets/images/logo.svg">
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -155,15 +154,9 @@
 
     <!-- Header (Identical on all pages) -->
     <header class="navbar navbar-expand-custom sticky-top">
-        <div class="container">
+        <div class="container-fluid px-4">
             <a class="navbar-brand d-flex align-items-center" href="index.html">
-                <svg width="40" height="40" viewBox="0 0 200 200" class="me-2">
-                    <circle cx="100" cy="100" r="90" fill="none" stroke="#E8634A" stroke-width="10" />
-                    <path
-                        d="M100 40 C130 40 160 70 160 100 C160 130 130 160 100 160 C70 160 40 130 40 100 C40 70 70 40 100 40"
-                        fill="none" stroke="#E8634A" stroke-width="6" />
-                    <path d="M60 80 Q100 60 140 80 Q160 120 100 150 Q40 120 60 80" fill="#E8634A" />
-                </svg>
+                <img src="assets/images/logo.svg" alt="LinguaBridge Logo" width="40" height="40" class="me-2 rounded">
                 <span class="h4 mb-0 fw-800 brand-text" style="font-family:'Outfit'">LinguaBridge</span>
             </a>
 
@@ -177,7 +170,8 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav mx-auto">
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="homeDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle" href="#" id="homeDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
                             Home
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="homeDropdown">
@@ -195,20 +189,23 @@
                             class="bi bi-moon-fill theme-toggle-icon fs-5"></i></button>
                     <button class="btn btn-link p-0 text-black rtl-toggle-btn"><i
                             class="bi bi-translate fs-5"></i></button>
-                    <a href="dashboard.html" class="btn btn-primary fw-bold">Access</a>
+                    <a href="login.html" class="btn btn-primary fw-bold">Access</a>
                     <a href="register.html" class="btn btn-primary fw-bold">Join Us</a>
                 </div>
             </div>
 
             <!-- Offcanvas Menu (Visible < 1100px) -->
-            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
+                aria-labelledby="offcanvasNavbarLabel">
                 <div class="offcanvas-header border-bottom border-2 border-primary">
-                    <button type="button" class="btn-close text-reset ms-auto" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    <button type="button" class="btn-close text-reset ms-auto" data-bs-dismiss="offcanvas"
+                        aria-label="Close"></button>
                 </div>
                 <div class="offcanvas-body d-flex flex-column">
                     <nav class="navbar-nav gap-2">
                         <div class="nav-item-group">
-                            <span class="nav-link disabled fw-800 text-primary small mb-1" style="opacity: 1;">HOME</span>
+                            <span class="nav-link disabled fw-800 text-primary small mb-1"
+                                style="opacity: 1;">HOME</span>
                             <div class="mobile-submenu d-flex flex-column gap-2">
                                 <a class="nav-link active" href="index.html">EXPLORE</a>
                                 <a class="nav-link" href="home-2.html">GLOBAL</a>
@@ -219,14 +216,17 @@
                         <a class="nav-link" href="blog.html">JOURNAL</a>
                         <a class="nav-link" href="contact.html">CONNECT</a>
                     </nav>
-                    
+
                     <div class="mt-auto pt-5">
                         <div class="d-flex gap-2 mb-4">
-                            <button class="btn btn-outline border-2 w-100 p-3 theme-toggle-btn"><i class="bi bi-moon-fill theme-toggle-icon"></i></button>
-                            <button class="btn btn-outline border-2 w-100 p-3 rtl-toggle-btn"><i class="bi bi-translate"></i></button>
+                            <button class="btn btn-outline border-2 w-100 p-3 theme-toggle-btn"><i
+                                    class="bi bi-moon-fill theme-toggle-icon"></i></button>
+                            <button class="btn btn-outline border-2 w-100 p-3 rtl-toggle-btn"><i
+                                    class="bi bi-translate"></i></button>
                         </div>
-                        <a href="dashboard.html" class="btn btn-primary w-100 py-3 fw-800 mb-3">ACCESS PORTAL</a>
-                        <a href="register.html" class="btn btn-outline border-3 border-primary w-100 py-3 fw-800">JOIN US</a>
+                        <a href="login.html" class="btn btn-primary w-100 py-3 fw-800 mb-3">ACCESS PORTAL</a>
+                        <a href="register.html" class="btn btn-outline border-3 border-primary w-100 py-3 fw-800">JOIN
+                            US</a>
                     </div>
                 </div>
             </div>
@@ -237,18 +237,19 @@
         <!-- Section 1: Conversation Starter (Split Viewport) -->
         <section class="hero-split container-fluid px-0 border-bottom border-2 border-primary">
             <div class="row g-0 w-100">
-                <div class="col-lg-6 d-flex justify-content-center align-items-center py-5 border-end border-2 border-primary">
+                <div
+                    class="col-lg-6 d-flex justify-content-center align-items-center py-4 border-bottom border-lg-bottom-0 border-lg-end border-2 border-primary">
                     <div class="text-center">
                         <div id="phrase-day">Bonjour!</div>
-                        <p class="mt-4 text-black fw-bold text-uppercase tracking-widest">Phrase of the moment</p>
+                        <p class="mt-3 text-black fw-bold text-uppercase tracking-widest">Phrase of the day</p>
                     </div>
                 </div>
-                <div class="col-lg-6 d-flex flex-column justify-content-center px-lg-5 p-4 py-5">
-                    <h1 class="display-3 mb-4 fw-800">Learn by Speaking.<br><span class="text-primary">Speak by
+                <div class="col-lg-6 d-flex flex-column justify-content-center align-items-center text-center px-lg-5 p-4 py-4">
+                    <h1 class="display-3 mb-3 fw-800">Learn by Speaking.<br><span class="text-primary">Speak by
                             Connecting.</span></h1>
-                    <p class="lead mb-5 text-black fw-bold">Join the world's most human language exchange. Real people
+                    <p class="lead mb-4 text-black fw-bold">Join the world's most human language exchange. Real people
                         practicing together, without scripts or bots.</p>
-                    <div class="d-flex gap-3">
+                    <div class="d-flex flex-column flex-sm-row gap-3 justify-content-center">
                         <a href="register.html" class="btn btn-primary btn-lg px-5">Find Partner</a>
                         <a href="services.html" class="btn btn-outline btn-lg px-5 border-2">Learn More</a>
                     </div>
@@ -472,10 +473,7 @@
             <div class="row g-5">
                 <div class="col-md-6 col-lg-3">
                     <a class="d-flex align-items-center mb-4" href="index.html">
-                        <svg width="40" height="40" viewBox="0 0 200 200" class="me-2">
-                            <circle cx="100" cy="100" r="90" fill="none" stroke="#E8634A" stroke-width="10" />
-                            <path d="M60 80 Q100 60 140 80 Q160 120 100 150 Q40 120 60 80" fill="#E8634A" />
-                        </svg>
+                        <img src="assets/images/logo.svg" alt="LinguaBridge Logo" width="40" height="40" class="me-2 rounded">
                         <span class="h4 mb-0 fw-800 text-black">LinguaBridge</span>
                     </a>
                     <p class="text-black fw-bold mb-4">The world's most human language exchange community Connecting
