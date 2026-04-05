@@ -29,8 +29,7 @@
     <header class="navbar navbar-expand-custom sticky-top">
         <div class="container-fluid px-4">
             <a class="navbar-brand d-flex align-items-center" href="index.html">
-                <img src="assets/images/logo.svg" alt="LinguaBridge Logo" width="40" height="40" class="me-2 rounded">
-                <span class="h4 mb-0 fw-800 brand-text" style="font-family:'Outfit'">LinguaBridge</span>
+                <img src="assets/images/weblogo.svg" alt="LinguaBridge" width="180" height="40">
             </a>
 
             <!-- Right-aligned Toggler for Mobile -->
@@ -53,6 +52,7 @@
                     </li>
                     <li class="nav-item"><a class="nav-link" href="pricing.html">Plans</a></li>
                     <li class="nav-item"><a class="nav-link" href="services.html">Skills</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
                     <li class="nav-item"><a class="nav-link" href="blog.html">Journal</a></li>
                     <li class="nav-item"><a class="nav-link active" href="contact.html">Connect</a></li>
                 </ul>
@@ -82,6 +82,7 @@
                         </div>
                         <a class="nav-link" href="pricing.html">PLANS</a>
                         <a class="nav-link" href="services.html">SKILLS</a>
+                        <a class="nav-link" href="about.html">ABOUT</a>
                         <a class="nav-link" href="blog.html">JOURNAL</a>
                         <a class="nav-link active" href="contact.html">CONNECT</a>
                     </nav>
@@ -100,25 +101,51 @@
     </header>
 
     <main>
-        <section class="section-padding border-bottom border-4 border-primary" style="background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=1200&h=600&fit=crop') center/cover no-repeat;">
+        <section class="section-padding section-inverted text-center border-bottom border-4 border-primary" style="background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=1600&h=600&fit=crop') center/cover no-repeat;">
+            <div class="container py-5">
+                <h1 class="display-2 fw-800 mb-4 text-white">CONNECT.</h1>
+                <p class="h4 fw-bold text-primary text-uppercase tracking-widest mb-4">Contact our global team.</p>
+                <div class="d-flex justify-content-center align-items-center gap-3 fw-bold small text-white opacity-75">
+                    <a href="index.html" class="text-white">HOME</a>
+                    <span class="opacity-50">/</span>
+                    <span class="text-primary">CONTACT</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-padding border-bottom border-4 border-primary">
             <div class="container">
                 <div class="row g-5 align-items-center">
                     <!-- Strict 2-Column Split (2x1 pattern) -->
                     <div class="col-lg-6">
-                        <h2 class="display-3 fw-800 text-white mb-5">Talk To Us.</h2>
+                        <h2 class="display-3 fw-800 mb-4">Talk To Us.</h2>
                         <div class="mb-5">
                             <h5 class="fw-800 text-uppercase tracking-widest text-primary mb-3">GLOBAL SUPPORT</h5>
-                            <p class="h4 fw-bold text-white opacity-75">Our community leaders are active 24/7 across continents.</p>
+                            <p class="h4 fw-bold opacity-75">Our community leaders are active 24/7 across continents.</p>
                         </div>
                         <div class="row g-4">
                             <div class="col-md-6 border-start border-4 border-primary ps-4">
-                                <h6 class="fw-800 text-white tracking-widest mb-2">EMAIL HUB</h6>
-                                <p class="h5 fw-bold text-white mb-0">hello@linguabridge.org</p>
+                                <h6 class="fw-800 text-primary tracking-widest mb-2">EMAIL HUB</h6>
+                                <p class="h5 fw-bold mb-0">hello@linguabridge.org</p>
                             </div>
                             <div class="col-md-6 border-start border-4 border-primary ps-4">
-                                <h6 class="fw-800 text-white tracking-widest mb-2">SOCIAL HUB</h6>
-                                <p class="h5 fw-bold text-white mb-0">@linguabridge_tnd</p>
+                                <h6 class="fw-800 text-primary tracking-widest mb-2">SOCIAL HUB</h6>
+                                <p class="h5 fw-bold mb-0">@linguabridge_tnd</p>
                             </div>
+                        </div>
+                        <div class="contact-social-icons d-flex flex-wrap gap-4 mt-5">
+                            <a href="#" class="text-inherit" aria-label="Twitter">
+                                <i class="bi bi-twitter-x fs-4"></i>
+                            </a>
+                            <a href="#" class="text-inherit" aria-label="Instagram">
+                                <i class="bi bi-instagram fs-4"></i>
+                            </a>
+                            <a href="#" class="text-inherit" aria-label="Facebook">
+                                <i class="bi bi-facebook fs-4"></i>
+                            </a>
+                            <a href="#" class="text-inherit" aria-label="LinkedIn">
+                                <i class="bi bi-linkedin fs-4"></i>
+                            </a>
                         </div>
                     </div>
                     <div class="col-lg-6">
@@ -130,11 +157,11 @@
                                 </div>
                                 <div class="mb-4">
                                     <label class="form-label fw-800">EMAIL ADDRESS</label>
-                                    <input type="email" class="form-control border-2 border-black rounded-0 p-3" required placeholder="name@email.com">
+                                    <input type="email" class="form-control border-2 border-primary rounded-0 p-3 bg-transparent text-inherit" required placeholder="name@email.com">
                                 </div>
                                 <div class="mb-5">
                                     <label class="form-label fw-800">MESSAGE</label>
-                                    <textarea class="form-control border-2 border-black rounded-0 p-3" rows="5" required placeholder="How can the global community help?"></textarea>
+                                    <textarea class="form-control border-2 border-primary rounded-0 p-3 bg-transparent text-inherit" rows="5" required placeholder="How can the global community help?"></textarea>
                                 </div>
                                 <button type="submit" class="btn btn-primary w-100 py-3 fw-800">SEND MESSAGE</button>
                             </form>
@@ -148,7 +175,7 @@
         <section class="border-top border-4 border-black" style="background-color: #000; padding: 0;">
             <div class="container-fluid p-0">
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2482.905020791717!2d-0.13708!3d51.509865!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487604d49f161b31%3A0x633630f9d45e0541!2sPiccadilly%20Circus!5e0!3m2!1sen!2suk!4v1700000000000!5m2!1sen!2suk" 
-                    width="100%" height="450" style="border:0; filter: grayscale(1) contrast(1.2) invert(0.9);" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
         </section>
     </main>
@@ -158,8 +185,7 @@
             <div class="row g-5">
                 <div class="col-md-6 col-lg-3">
                     <a class="d-flex align-items-center mb-4" href="index.html">
-                        <img src="assets/images/logo.svg" alt="LinguaBridge Logo" width="40" height="40" class="me-2 rounded">
-                        <span class="h4 mb-0 fw-800 text-black">LinguaBridge</span>
+                        <img src="assets/images/weblogo.svg" alt="LinguaBridge" width="180" height="40">
                     </a>
                     <p class="text-black fw-bold mb-4">The world's most human language exchange community Connecting
                         learners globally.</p>

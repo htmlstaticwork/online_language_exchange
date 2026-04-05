@@ -59,6 +59,100 @@ a:hover {
     opacity: 0.8;
 }
 
+.contact-social-icons a {
+    width: 44px;
+    height: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid rgba(0, 0, 0, 0.35);
+    border-radius: 999px;
+    opacity: 1;
+}
+
+.section-inverted .contact-social-icons a {
+    border-color: rgba(255, 255, 255, 0.35);
+}
+
+.contact-social-icons a:hover {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    color: #FFF !important;
+    opacity: 1;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(232, 99, 74, 0.35);
+}
+
+.contact-social-icons a:focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 3px;
+    opacity: 1;
+}
+
+.text-inherit {
+    color: inherit !important;
+}
+
+input::placeholder,
+textarea::placeholder,
+.form-control::placeholder {
+    color: currentColor !important;
+    opacity: 1 !important;
+}
+
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder,
+.form-control::-webkit-input-placeholder {
+    color: currentColor !important;
+    opacity: 1 !important;
+}
+
+input::-moz-placeholder,
+textarea::-moz-placeholder,
+.form-control::-moz-placeholder {
+    color: currentColor !important;
+    opacity: 1 !important;
+}
+
+input:-ms-input-placeholder,
+textarea:-ms-input-placeholder,
+.form-control:-ms-input-placeholder {
+    color: currentColor !important;
+    opacity: 1 !important;
+}
+
+input::-ms-input-placeholder,
+textarea::-ms-input-placeholder,
+.form-control::-ms-input-placeholder {
+    color: currentColor !important;
+    opacity: 1 !important;
+}
+
+.section-inverted .form-control,
+.section-inverted .form-select,
+.section-inverted input,
+.section-inverted textarea {
+    background-color: transparent !important;
+    color: var(--section-text) !important;
+    border-color: var(--primary-color) !important;
+}
+
+.section-inverted .form-control::placeholder,
+.section-inverted .form-select::placeholder,
+.section-inverted input::placeholder,
+.section-inverted textarea::placeholder {
+    color: var(--section-text) !important;
+    opacity: 1 !important;
+}
+
+.section-inverted .form-control:focus,
+.section-inverted .form-select:focus,
+.section-inverted input:focus,
+.section-inverted textarea:focus {
+    box-shadow: none !important;
+    border-color: var(--primary-color) !important;
+}
+
 /* Buttons (5-12 chars for text) */
 .btn-primary {
     background-color: var(--primary-color) !important;

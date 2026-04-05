@@ -1,0 +1,11 @@
+<svg width="180" height="40" viewBox="0 0 180 40" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="LinguaBridge">
+  <rect width="180" height="40" fill="#ffffff" />
+  <g transform="translate(2 2) scale(0.18)">
+    <path d="M40 80 Q40 40 80 40 Q120 40 120 80 Q120 120 80 120 Q70 120 60 130 Q62 115 55 110 Q40 100 40 80 Z" fill="#E8634A" />
+    <path d="M80 80 Q80 40 120 40 Q160 40 160 80 Q160 120 120 120 Q110 120 100 130 Q102 115 95 110 Q80 100 80 80 Z" fill="#ff9a84" />
+    <rect x="90" y="70" width="20" height="40" rx="10" fill="#000000" />
+    <rect x="85" y="110" width="30" height="10" rx="5" fill="#000000" />
+    <rect x="95" y="120" width="10" height="20" fill="#000000" />
+  </g>
+  <text x="46" y="20" dominant-baseline="middle" fill="#000000" font-size="20" font-weight="800" font-family="Outfit, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif">LinguaBridge</text>
+</svg>

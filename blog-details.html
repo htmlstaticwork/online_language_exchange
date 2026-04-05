@@ -20,8 +20,7 @@
     <header class="navbar navbar-expand-custom sticky-top">
         <div class="container-fluid px-4">
             <a class="navbar-brand d-flex align-items-center" href="index.html">
-                <img src="assets/images/logo.svg" alt="LinguaBridge Logo" width="40" height="40" class="me-2 rounded">
-                <span class="h4 mb-0 fw-800 brand-text" style="font-family:'Outfit'">LinguaBridge</span>
+                <img src="assets/images/weblogo.svg" alt="LinguaBridge" width="180" height="40">
             </a>
 
             <!-- Right-aligned Toggler for Mobile -->
@@ -44,6 +43,7 @@
                     </li>
                     <li class="nav-item"><a class="nav-link" href="pricing.html">Plans</a></li>
                     <li class="nav-item"><a class="nav-link" href="services.html">Skills</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
                     <li class="nav-item"><a class="nav-link active" href="blog.html">Journal</a></li>
                     <li class="nav-item"><a class="nav-link" href="contact.html">Connect</a></li>
                 </ul>
@@ -73,6 +73,7 @@
                         </div>
                         <a class="nav-link" href="pricing.html">PLANS</a>
                         <a class="nav-link" href="services.html">SKILLS</a>
+                        <a class="nav-link" href="about.html">ABOUT</a>
                         <a class="nav-link active" href="blog.html">JOURNAL</a>
                         <a class="nav-link" href="contact.html">CONNECT</a>
                     </nav>
@@ -93,50 +94,87 @@
     <main>
         <section class="section-padding">
             <div class="container">
-                <div class="row g-5">
+                <div class="row g-5 align-items-start">
                     <!-- Main Article Content (2nd-column pattern via Bootstrap Grid) -->
-                    <div class="col-lg-8">
-                        <span class="badge bg-primary p-2 px-3 fw-bold mb-4">CULTURE</span>
-                        <h1 class="display-3 fw-800 mb-5 text-uppercase">5 secrets to native slang.</h1>
+                    <div class="col-lg-8 pe-lg-5">
+                        <span class="badge bg-primary p-2 px-3 fw-bold mb-4" id="blog-details-category">CULTURE</span>
+                        <h1 class="fw-bolder mb-3 text-uppercase" id="blog-details-title" style="font-size: clamp(2.25rem, 4.2vw, 3.75rem); line-height: 1.05;">5 secrets to native slang.</h1>
+                        <div class="d-flex flex-wrap gap-3 align-items-center mb-5">
+                            <p class="small fw-bold opacity-75 mb-0" id="blog-details-date">OCT 15, 2026</p>
+                            <span class="opacity-50">•</span>
+                            <p class="small fw-bold opacity-75 mb-0" id="blog-details-readtime">5 MIN READ</p>
+                        </div>
                         
-                        <img src="assets/images/article-hero.jpg" alt="Slang Culture Hero" class="img-fluid border-4 border-primary mb-5 w-100">
+                        <figure class="mb-5">
+                            <img src="assets/images/hero-global.jpg" alt="People connecting across languages" id="blog-details-hero" class="img-fluid w-100 border border-4 border-primary" style="aspect-ratio: 16 / 9; object-fit: cover;">
+                            <figcaption class="small fw-bold opacity-75 mt-3" id="blog-details-caption">Real fluency is built in real conversations.</figcaption>
+                        </figure>
                         
-                        <div class="article-body h5 fw-bold text-inherit opacity-80" style="line-height:1.8;">
+                        <div class="article-body fs-5 fw-bold text-inherit opacity-75" id="blog-details-body" style="line-height: 1.9;">
                             <p class="mb-5">Language is more than just a set of grammatical rules. It is a living, breathing entity that evolves through the streets, the cafés, and the conversations of everyday people. To truly master a language, one must venture beyond the textbooks and dive into the world of slang.</p>
                             
-                            <h2 class="display-6 fw-800 mb-4 text-inherit">1. Context Over Literal Translation</h2>
+                            <h2 class="fw-bolder mb-4 text-inherit" style="font-size: clamp(1.5rem, 2.4vw, 2.25rem);">1. Context Over Literal Translation</h2>
                             <p class="mb-5">Many slang phrases make zero sense when translated literally. Understanding the context—who is speaking, where they are, and the underlying emotion—is the first key to unlocking native-level communication.</p>
 
-                            <blockquote class="border-start border-4 border-primary ps-5 my-5 h4 fw-800">
+                            <blockquote class="border-start border-4 border-primary ps-4 ps-md-5 my-5 h4 fw-bolder">
                                 "The best classroom for slang is a 30-minute session with a native partner who isn't afraid to correct your awkwardness."
                             </blockquote>
 
-                            <h2 class="display-6 fw-800 mb-4 text-inherit">2. Emotional Cadence</h2>
+                            <h2 class="fw-bolder mb-4 text-inherit" style="font-size: clamp(1.5rem, 2.4vw, 2.25rem);">2. Emotional Cadence</h2>
                             <p class="mb-5">Every culture has a unique emotional rhythm. Japanese slang often focuses on shared social harmony, while Italian colloquialisms might emphasize dramatic emphasis. Listen for the pauses as much as the words.</p>
                         </div>
                     </div>
 
                     <!-- Sidebar (2nd-column split) -->
                     <aside class="col-lg-4">
-                        <div class="p-5 border-4 border-primary section-inverted card">
-                            <h4 class="fw-800 text-primary mb-4">GET IN SIGHTS</h4>
+                        <div class="p-4 p-lg-5 border-4 border-primary section-inverted card">
+                            <h4 class="fw-bolder text-primary mb-4">GET IN SIGHTS</h4>
                             <p class="fw-bold mb-5 h6">Join 5,000+ serious polyglots receiving our weekly journal entries.</p>
-                            <div class="input-group">
-                                <input type="email" class="form-control border-3 border-primary rounded-0 p-3 bg-transparent text-inherit" placeholder="EMAIL ADDRESS">
-                                <button class="btn btn-primary w-100 mt-3 py-3 fw-800">SIGN UP</button>
+                            <form class="d-grid gap-3">
+                                <input type="email" class="form-control border-3 border-primary rounded-0 p-3 bg-transparent text-inherit fw-bold" placeholder="EMAIL ADDRESS">
+                                <button class="btn btn-primary py-3 fw-bolder">SIGN UP</button>
+                            </form>
+                        </div>
+
+                        <div class="border-4 border-primary p-4 mt-4 card">
+                            <div class="d-flex gap-3 align-items-start">
+                                <div class="border border-4 border-primary d-flex align-items-center justify-content-center flex-shrink-0"
+                                    style="width:64px;height:64px;font-weight:800;letter-spacing:1px;">
+                                    LB
+                                </div>
+                                <div class="flex-grow-1">
+                                    <h5 class="fw-bolder mb-1">LinguaBridge Editorial</h5>
+                                    <p class="small fw-bold opacity-75 mb-3">Community-led insights from tandem partners worldwide.</p>
+                                    <div class="d-flex gap-3 mb-3">
+                                        <a href="#" class="text-primary"><i class="bi bi-twitter-x fs-5"></i></a>
+                                        <a href="#" class="text-primary"><i class="bi bi-instagram fs-5"></i></a>
+                                        <a href="#" class="text-primary"><i class="bi bi-linkedin fs-5"></i></a>
+                                    </div>
+                                    <p class="small fw-bold opacity-75 mb-0" style="line-height: 1.6;">We publish field notes from real sessions: what makes conversations flow, what causes stalls, and the micro-habits that turn “study time” into actual speaking ability.</p>
+                                </div>
                             </div>
                         </div>
 
-                        <div class="border-4 border-primary p-5 mt-5 card">
-                            <h4 class="fw-800 mb-4">RELATED JOURNAL</h4>
-                            <ul class="list-unstyled d-grid gap-4">
-                                <li>
-                                    <a href="#" class="text-inherit fw-bold h6 text-decoration-none hover-primary">TANDEM ACCELERATION MODEL →</a>
-                                    <p class="small opacity-50 fw-bold mt-1">OCT 12, 2026</p>
+                        <div class="border-4 border-primary p-4 p-lg-5 mt-5 card">
+                            <h4 class="fw-bolder mb-4">RELATED JOURNAL</h4>
+                            <ul class="list-unstyled d-grid gap-4" id="blog-details-related">
+                                <li class="d-flex gap-3">
+                                    <a href="blog-details.html?post=tandem" class="flex-shrink-0">
+                                        <img src="assets/images/methods-1.svg" alt="Tandem model icon" width="64" height="64" class="border border-3 border-primary p-2 bg-white">
+                                    </a>
+                                    <div class="flex-grow-1">
+                                        <a href="blog-details.html?post=tandem" class="text-inherit fw-bolder text-decoration-none d-inline-block">TANDEM ACCELERATION MODEL →</a>
+                                        <p class="small opacity-50 fw-bold mt-1 mb-0">OCT 12, 2026</p>
+                                    </div>
                                 </li>
-                                <li>
-                                    <a href="#" class="text-black fw-bold h6 text-decoration-none hover-primary">TOP 3 FLUENCY HACKS →</a>
-                                    <p class="small opacity-50 fw-bold mt-1">OCT 05, 2026</p>
+                                <li class="d-flex gap-3">
+                                    <a href="blog-details.html?post=prep" class="flex-shrink-0">
+                                        <img src="assets/images/methods-2.svg" alt="Session prep icon" width="64" height="64" class="border border-3 border-primary p-2 bg-white">
+                                    </a>
+                                    <div class="flex-grow-1">
+                                        <a href="blog-details.html?post=prep" class="text-inherit fw-bolder text-decoration-none d-inline-block">PREPARING FOR SESSIONS →</a>
+                                        <p class="small opacity-50 fw-bold mt-1 mb-0">OCT 05, 2026</p>
+                                    </div>
                                 </li>
                             </ul>
                         </div>
@@ -151,8 +189,7 @@
             <div class="row g-5">
                 <div class="col-md-6 col-lg-3">
                     <a class="d-flex align-items-center mb-4" href="index.html">
-                        <img src="assets/images/logo.svg" alt="LinguaBridge Logo" width="40" height="40" class="me-2 rounded">
-                        <span class="h4 mb-0 fw-800 text-black">LinguaBridge</span>
+                        <img src="assets/images/weblogo.svg" alt="LinguaBridge" width="180" height="40">
                     </a>
                     <p class="text-black fw-bold mb-4">The world's most human language exchange community Connecting
                         learners globally.</p>

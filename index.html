@@ -55,10 +55,11 @@
         }
 
         .matchmaker-box {
-            background: #FFF;
+            background: var(--section-bg);
             padding: 40px;
             border-radius: 0;
-            border: 2px solid #000;
+            border: 2px solid var(--section-border);
+            color: var(--section-text);
         }
 
         .filmstrip-container {
@@ -71,11 +72,12 @@
 
         .frame-card {
             min-width: 300px;
-            background: #FFF;
+            background: var(--section-bg);
             padding: 40px;
             border-radius: 0;
-            border: 2px solid #000;
+            border: 2px solid var(--section-border);
             text-align: center;
+            color: var(--section-text);
         }
 
         .ticker-wrap {
@@ -135,11 +137,11 @@
             align-items: center;
             padding: 30px;
             text-align: center;
-            border: 2px solid #000;
+            border: 2px solid var(--section-border);
         }
 
         .topic-front {
-            background: #FFF;
+            background: var(--section-bg);
         }
 
         .topic-back {
@@ -156,8 +158,7 @@
     <header class="navbar navbar-expand-custom sticky-top">
         <div class="container-fluid px-4">
             <a class="navbar-brand d-flex align-items-center" href="index.html">
-                <img src="assets/images/logo.svg" alt="LinguaBridge Logo" width="40" height="40" class="me-2 rounded">
-                <span class="h4 mb-0 fw-800 brand-text" style="font-family:'Outfit'">LinguaBridge</span>
+                <img src="assets/images/weblogo.svg" alt="LinguaBridge" width="180" height="40">
             </a>
 
             <!-- Right-aligned Toggler for Mobile -->
@@ -170,7 +171,7 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav mx-auto">
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="homeDropdown" role="button"
+                        <a class="nav-link dropdown-toggle active" href="#" id="homeDropdown" role="button"
                             data-bs-toggle="dropdown" aria-expanded="false">
                             Home
                         </a>
@@ -181,6 +182,7 @@
                     </li>
                     <li class="nav-item"><a class="nav-link" href="pricing.html">Plans</a></li>
                     <li class="nav-item"><a class="nav-link" href="services.html">Skills</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
                     <li class="nav-item"><a class="nav-link" href="blog.html">Journal</a></li>
                     <li class="nav-item"><a class="nav-link" href="contact.html">Connect</a></li>
                 </ul>
@@ -189,7 +191,7 @@
                             class="bi bi-moon-fill theme-toggle-icon fs-5"></i></button>
                     <button class="btn btn-link p-0 text-black rtl-toggle-btn"><i
                             class="bi bi-translate fs-5"></i></button>
-                    <a href="login.html" class="btn btn-primary fw-bold">Access</a>
+                    <a href="dashboard.html" class="btn btn-primary fw-bold">Access</a>
                     <a href="register.html" class="btn btn-primary fw-bold">Join Us</a>
                 </div>
             </div>
@@ -213,6 +215,7 @@
                         </div>
                         <a class="nav-link" href="pricing.html">PLANS</a>
                         <a class="nav-link" href="services.html">SKILLS</a>
+                        <a class="nav-link" href="about.html">ABOUT</a>
                         <a class="nav-link" href="blog.html">JOURNAL</a>
                         <a class="nav-link" href="contact.html">CONNECT</a>
                     </nav>
@@ -224,7 +227,7 @@
                             <button class="btn btn-outline border-2 w-100 p-3 rtl-toggle-btn"><i
                                     class="bi bi-translate"></i></button>
                         </div>
-                        <a href="login.html" class="btn btn-primary w-100 py-3 fw-800 mb-3">ACCESS PORTAL</a>
+                        <a href="dashboard.html" class="btn btn-primary w-100 py-3 fw-800 mb-3">ACCESS PORTAL</a>
                         <a href="register.html" class="btn btn-outline border-3 border-primary w-100 py-3 fw-800">JOIN
                             US</a>
                     </div>
@@ -461,7 +464,7 @@
                                 placeholder="ENTER EMAIL ADDRESS">
                             <button class="btn btn-primary px-5 fw-bold" type="button">JOIN FREE</button>
                         </div>
-                        <p class="text-white fw-bold">Free forever. Zero credit cards. Zero spam.</p>
+                        <p class="text-inherit fw-bold">Free forever. Zero credit cards. Zero spam.</p>
                     </div>
                 </div>
             </div>
@@ -474,8 +477,7 @@
             <div class="row g-5">
                 <div class="col-md-6 col-lg-3">
                     <a class="d-flex align-items-center mb-4" href="index.html">
-                        <img src="assets/images/logo.svg" alt="LinguaBridge Logo" width="40" height="40" class="me-2 rounded">
-                        <span class="h4 mb-0 fw-800 text-black">LinguaBridge</span>
+                        <img src="assets/images/weblogo.svg" alt="LinguaBridge" width="180" height="40">
                     </a>
                     <p class="text-black fw-bold mb-4">The world's most human language exchange community Connecting
                         learners globally.</p>

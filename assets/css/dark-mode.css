@@ -26,6 +26,39 @@
     color: var(--text-color) !important;
 }
 
+[data-theme="dark"] .offcanvas {
+    background-color: var(--bg-color) !important;
+    color: var(--text-color);
+    border-left: 2px solid var(--border-color);
+}
+
+[data-theme="dark"] .offcanvas .offcanvas-header {
+    border-bottom-color: var(--border-color) !important;
+}
+
+[data-theme="dark"] .offcanvas .btn-close {
+    filter: invert(1) grayscale(1);
+    opacity: 1;
+}
+
+[data-theme="dark"] .dropdown-menu {
+    background-color: var(--bg-color);
+    border-color: var(--border-color) !important;
+}
+
+[data-theme="dark"] .dropdown-item {
+    color: var(--text-color) !important;
+}
+
+[data-theme="dark"] .dropdown-item:hover {
+    background-color: var(--primary-color) !important;
+    color: #FFF !important;
+}
+
+[data-theme="dark"] .border-black {
+    border-color: var(--border-color) !important;
+}
+
 
 /* Headings handled by color: inherit in style.css */
 
@@ -38,6 +71,31 @@
     background-color: var(--bg-color);
     color: var(--text-color);
     border: 2px solid var(--border-color) !important;
+}
+
+[data-theme="dark"] input::placeholder,
+[data-theme="dark"] textarea::placeholder,
+[data-theme="dark"] .form-control::placeholder,
+[data-theme="dark"] .form-select::placeholder {
+    color: var(--text-color) !important;
+    opacity: 1 !important;
+}
+
+[data-theme="dark"] .section-inverted .form-control,
+[data-theme="dark"] .section-inverted .form-select,
+[data-theme="dark"] .section-inverted input,
+[data-theme="dark"] .section-inverted textarea {
+    background-color: transparent !important;
+    color: var(--section-text) !important;
+    border-color: var(--primary-color) !important;
+}
+
+[data-theme="dark"] .section-inverted .form-control::placeholder,
+[data-theme="dark"] .section-inverted .form-select::placeholder,
+[data-theme="dark"] .section-inverted input::placeholder,
+[data-theme="dark"] .section-inverted textarea::placeholder {
+    color: var(--section-text) !important;
+    opacity: 1 !important;
 }
 
 [data-theme="dark"] .text-black, [data-theme="dark"] .text-dark {
