@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="light" dir="ltr">
+
 <head>
     <!-- Core Meta -->
     <meta charset="UTF-8">
@@ -8,32 +9,107 @@
     <link rel="icon" type="image/svg+xml" href="assets/images/logo.svg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&family=Outfit:wght@700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&family=Outfit:wght@700;800&display=swap"
+        rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/dark-mode.css">
     <style>
-        body { min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 60px 20px; background-color: var(--bg-color); color: var(--text-color); }
-        .auth-card { width: 100%; max-width: 440px; padding: 30px; border-radius: 0; position: relative; background-color: var(--bg-color); border: 4px solid var(--border-color); color: var(--text-color); }
-        .auth-card::before { content: ''; position: absolute; top: 10px; left: 10px; right: -10px; bottom: -10px; border: 4px solid var(--primary-color); z-index: -1; }
-        
+        body {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 60px 20px;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+        }
+
+        .auth-card {
+            width: 100%;
+            max-width: 440px;
+            padding: 30px;
+            border-radius: 0;
+            position: relative;
+            background-color: var(--bg-color);
+            border: 4px solid var(--border-color);
+            color: var(--text-color);
+        }
+
+        .auth-card::before {
+            content: '';
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            right: -10px;
+            bottom: -10px;
+            border: 4px solid var(--primary-color);
+            z-index: -1;
+        }
+
         /* Auth Page Toggles */
-        .auth-toggles { position: fixed; top: 20px; right: 20px; display: flex; gap: 10px; z-index: 1000; }
-        .auth-toggle-btn { width: 45px; height: 45px; border-radius: 0; border: 3px solid var(--border-color); background: var(--bg-color); color: var(--text-color); display: flex; align-items: center; justify-content: center; cursor: pointer; transition: all 0.2s; position: relative; }
-        .auth-toggle-btn:hover { transform: translate(-2px, -2px); box-shadow: 4px 4px 0 var(--primary-color); }
-        .auth-toggle-btn i { font-size: 1.2rem; }
-        
-        [dir="rtl"] .auth-toggles { right: auto; left: 20px; }
+        .auth-toggles {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .auth-toggle-btn {
+            width: 45px;
+            height: 45px;
+            border-radius: 0;
+            border: 3px solid var(--border-color);
+            background: var(--bg-color);
+            color: var(--text-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.2s;
+            position: relative;
+        }
+
+        .auth-toggle-btn:hover {
+            transform: translate(-2px, -2px);
+            box-shadow: 4px 4px 0 var(--primary-color);
+        }
+
+        .auth-toggle-btn i {
+            font-size: 1.2rem;
+        }
+
+        [dir="rtl"] .auth-toggles {
+            right: auto;
+            left: 20px;
+        }
 
         @media (max-width: 576px) {
-            .auth-toggles { top: 10px; right: 10px; }
-            .auth-toggle-btn { width: 38px; height: 38px; border-width: 2px; }
-            .auth-toggle-btn i { font-size: 1rem; }
-            .auth-card { padding: 20px; }
+            .auth-toggles {
+                top: 10px;
+                right: 10px;
+            }
+
+            .auth-toggle-btn {
+                width: 38px;
+                height: 38px;
+                border-width: 2px;
+            }
+
+            .auth-toggle-btn i {
+                font-size: 1rem;
+            }
+
+            .auth-card {
+                padding: 20px;
+            }
         }
     </style>
 </head>
+
 <body>
     <div class="auth-toggles">
         <button class="auth-toggle-btn theme-toggle-btn" title="Toggle Theme">
@@ -53,8 +129,12 @@
         </div>
 
         <div class="d-flex flex-column flex-sm-row gap-2 mb-3">
-            <button class="btn btn-outline border-2 w-100 py-3 fw-800 d-flex align-items-center justify-content-center gap-2"><i class="bi bi-google"></i> GOOGLE</button>
-            <button class="btn btn-outline border-2 w-100 py-3 fw-800 d-flex align-items-center justify-content-center gap-2"><i class="bi bi-facebook"></i> FACEBOOK</button>
+            <button
+                class="btn btn-outline border-2 w-100 py-3 fw-800 d-flex align-items-center justify-content-center gap-2"><i
+                    class="bi bi-google"></i> GOOGLE</button>
+            <button
+                class="btn btn-outline border-2 w-100 py-3 fw-800 d-flex align-items-center justify-content-center gap-2"><i
+                    class="bi bi-facebook"></i> FACEBOOK</button>
         </div>
 
         <div class="text-center mb-2">
@@ -64,19 +144,33 @@
         <form class="needs-validation" novalidate id="register-form">
             <div class="mb-3">
                 <label class="form-label fw-800 small tracking-widest uppercase">FULL NAME</label>
-                <input type="text" class="form-control border-3 border-primary p-3 bg-transparent text-inherit" required placeholder="User Name">
+                <input type="text" class="form-control border-3 border-primary p-3 bg-transparent text-inherit"
+                    required>
             </div>
             <div class="mb-3">
                 <label class="form-label fw-800 small tracking-widest uppercase">EMAIL ADDRESS</label>
-                <input type="email" class="form-control border-3 border-black p-3 bg-white text-black" required placeholder="name@email.com">
+                <input type="email" class="form-control border-3 border-primary p-3 bg-transparent text-inherit"
+                    required>
             </div>
             <div class="mb-3">
                 <label class="form-label fw-800 small tracking-widest uppercase">PASSWORD</label>
-                <input type="password" class="form-control border-3 border-black p-3 bg-white text-black" required placeholder="••••••••">
+                <div class="password-group">
+                    <input type="password" class="form-control border-3 border-primary p-3 bg-transparent text-inherit"
+                        required>
+                    <button type="button" class="password-toggle" aria-label="Toggle Password Visibility">
+                        <i class="bi bi-eye"></i>
+                    </button>
+                </div>
             </div>
             <div class="mb-3">
                 <label class="form-label fw-800 small tracking-widest uppercase">CONFIRM PASSWORD</label>
-                <input type="password" class="form-control border-3 border-black p-3 bg-white text-black" required placeholder="••••••••">
+                <div class="password-group">
+                    <input type="password" class="form-control border-3 border-primary p-3 bg-transparent text-inherit"
+                        required>
+                    <button type="button" class="password-toggle" aria-label="Toggle Password Visibility">
+                        <i class="bi bi-eye"></i>
+                    </button>
+                </div>
             </div>
             <div class="form-check mb-3">
                 <input class="form-check-input border-2 border-primary" type="checkbox" id="terms" required>
@@ -86,7 +180,8 @@
         </form>
 
         <div class="text-center mt-3">
-            <p class="small fw-bold mb-0">Already joined? <a href="login.html" class="text-primary fw-800 text-decoration-none">ACCESS PORTAL</a></p>
+            <p class="small fw-bold mb-0">Already joined? <a href="login.html"
+                    class="text-primary fw-800 text-decoration-none">ACCESS PORTAL</a></p>
         </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
@@ -95,9 +190,10 @@
         document.getElementById('register-form').addEventListener('submit', (e) => {
             if (e.target.checkValidity()) {
                 e.preventDefault();
-                window.location.href = 'dashboard.html';
+                window.location.href = 'index.html';
             }
         });
     </script>
 </body>
+
 </html>

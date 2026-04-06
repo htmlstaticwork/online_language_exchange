@@ -264,4 +264,26 @@ document.addEventListener('DOMContentLoaded', () => {
             `;
         }).join('');
     }
+
+    /**
+     * Password Visibility Toggle
+     * Toggles 'type' attribute between 'password' and 'text'.
+     */
+    const initPasswordToggle = () => {
+        const toggleBtns = document.querySelectorAll('.password-toggle');
+        toggleBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const input = btn.parentElement.querySelector('input');
+                const icon = btn.querySelector('i');
+                if (input.type === 'password') {
+                    input.type = 'text';
+                    icon.classList.replace('bi-eye', 'bi-eye-slash');
+                } else {
+                    input.type = 'password';
+                    icon.classList.replace('bi-eye-slash', 'bi-eye');
+                }
+            });
+        });
+    };
+    initPasswordToggle();
 });

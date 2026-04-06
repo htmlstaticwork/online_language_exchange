@@ -480,3 +480,43 @@ section, .section-padding {
     opacity: 1;
     transform: translateY(0);
 }
+
+/* Password Toggle Styles */
+.password-group {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.password-group .form-control {
+    padding-right: 50px !important;
+}
+
+.password-toggle {
+    position: absolute;
+    right: 15px;
+    background: none;
+    border: none;
+    padding: 0;
+    color: var(--text-color);
+    cursor: pointer;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
+}
+
+.password-toggle:hover {
+    color: var(--primary-color);
+}
+
+[dir="rtl"] .password-group .form-control {
+    padding-right: 15px !important;
+    padding-left: 50px !important;
+}
+
+[dir="rtl"] .password-toggle {
+    right: auto;
+    left: 15px;
+}
