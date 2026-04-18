@@ -1,54 +1,158 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="light" dir="ltr">
+
 <head>
     <!-- Core Meta -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Story | LinguaBridge - Our Mission</title>
-    
+
     <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="assets/images/logo.svg">
+    <link rel="icon" type="image/png" href="assets/images/favicon.png">
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&family=Outfit:wght@700;800&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&family=Outfit:wght@700;800&display=swap"
+        rel="stylesheet">
+
     <!-- Bootstrap & Icons -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-    
+
     <!-- Custom CSS -->
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/dark-mode.css">
     <link rel="stylesheet" href="assets/css/rtl.css">
 
     <style>
-        .timeline { position: relative; padding: 60px 0; }
-        .timeline::before { content: ''; position: absolute; left: 50%; top: 0; bottom: 0; width: 4px; background: #000; transform: translateX(-50%); }
-        .timeline-item { display: flex; justify-content: flex-end; padding-right: 50%; position: relative; margin-bottom: 80px; }
-        .timeline-item.right { justify-content: flex-start; padding-right: 0; padding-left: 50%; }
-        .timeline-content { width: 85%; background: #FFF; padding: 40px; border: 4px solid #000; border-radius: 0; position: relative; }
-        .timeline-dot { position: absolute; right: -12px; top: 40px; width: 24px; height: 24px; background: var(--primary-color); border: 4px solid #FFF; border-radius: 50%; transform: translateX(50%); z-index: 2; }
-        .timeline-item.right .timeline-dot { right: auto; left: -12px; transform: translateX(-50%); }
-        [data-theme="dark"] .timeline-content { background: #000; border-color: #FFF; }
-        [data-theme="dark"] .timeline-dot { border-color: #000; }
-        [data-theme="dark"] .timeline::before { background: #FFF; }
+        .timeline {
+            position: relative;
+            padding: 60px 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: #000;
+            transform: translateX(-50%);
+        }
+
+        .timeline-item {
+            display: flex;
+            justify-content: flex-end;
+            padding-right: 50%;
+            position: relative;
+            margin-bottom: 80px;
+        }
+
+        .timeline-item.right {
+            justify-content: flex-start;
+            padding-right: 0;
+            padding-left: 50%;
+        }
+
+        .timeline-content {
+            width: 85%;
+            background: #FFF;
+            padding: 40px;
+            border: 4px solid #000;
+            border-radius: 0;
+            position: relative;
+            transition: var(--transition);
+        }
+
+        .timeline-content:hover {
+            transform: translateY(-5px);
+            box-shadow: 10px 10px 0 var(--primary-color);
+        }
+
+        .timeline-dot {
+            position: absolute;
+            left: 50%;
+            top: 40px;
+            width: 20px;
+            height: 20px;
+            background: var(--primary-color);
+            border: 4px solid #FFF;
+            border-radius: 50%;
+            transform: translateX(-50%);
+            z-index: 2;
+            box-shadow: 0 0 0 4px rgba(232, 99, 74, 0.2);
+        }
+
+        .timeline-dot::after {
+            content: '';
+            position: absolute;
+            top: -4px;
+            left: -4px;
+            right: -4px;
+            bottom: -4px;
+            border-radius: 50%;
+            border: 2px solid var(--primary-color);
+            animation: timeline-pulse 2s infinite;
+        }
+
+        @keyframes timeline-pulse {
+            0% {
+                transform: scale(1);
+                opacity: 1;
+            }
+
+            100% {
+                transform: scale(2.5);
+                opacity: 0;
+            }
+        }
+
+        [data-theme="dark"] .timeline-content {
+            background: #000;
+            border-color: #FFF;
+        }
+
+        [data-theme="dark"] .timeline-dot {
+            border-color: #000;
+        }
+
+        [data-theme="dark"] .timeline::before {
+            background: #FFF;
+        }
+
         @media (max-width: 768px) {
-            .timeline::before { left: 30px; }
-            .timeline-item, .timeline-item.right { padding-left: 60px; padding-right: 0; justify-content: flex-start; }
-            .timeline-dot { left: -12px; right: auto; transform: translateX(50%); }
-            .timeline-content { width: 100%; }
+            .timeline::before {
+                left: 30px;
+            }
+
+            .timeline-item,
+            .timeline-item.right {
+                padding-left: 60px;
+                padding-right: 0;
+                justify-content: flex-start;
+            }
+
+            .timeline-dot {
+                left: 30px;
+                transform: translateX(-50%);
+            }
+
+            .timeline-content {
+                width: 100%;
+            }
         }
     </style>
 </head>
+
 <body>
 
     <!-- Header (Identical on all pages) -->
     <header class="navbar navbar-expand-custom sticky-top">
         <div class="container-fluid px-4">
             <a class="navbar-brand d-flex align-items-center" href="index.html">
-                <img src="assets/images/weblogo.svg" alt="LinguaBridge" width="180" height="40">
+                <img src="assets/images/Logo2.png" alt="LinguaBridge" width="180" height="40">
             </a>
 
             <!-- Right-aligned Toggler for Mobile -->
@@ -61,7 +165,8 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav mx-auto">
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="homeDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle" href="#" id="homeDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
                             Home
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="homeDropdown">
@@ -76,24 +181,26 @@
                     <li class="nav-item"><a class="nav-link" href="contact.html">Connect</a></li>
                 </ul>
                 <div class="d-flex align-items-center gap-3 desktop-nav-buttons">
-                    <button class="btn btn-link p-0 text-black theme-toggle-btn"><i
+                    <button class="btn nav-btn-icon theme-toggle-btn"><i
                             class="bi bi-moon-fill theme-toggle-icon fs-5"></i></button>
-                    <button class="btn btn-link p-0 text-black rtl-toggle-btn"><i
-                            class="bi bi-translate fs-5"></i></button>
+                    <button class="btn nav-btn-icon rtl-toggle-btn fw-800">RTL</button>
                     <a href="dashboard.html" class="btn btn-primary fw-bold">Access</a>
                     <a href="register.html" class="btn btn-primary fw-bold">Join Us</a>
                 </div>
             </div>
 
             <!-- Offcanvas Menu (Visible < 1100px) -->
-            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
+                aria-labelledby="offcanvasNavbarLabel">
                 <div class="offcanvas-header border-bottom border-2 border-primary">
-                    <button type="button" class="btn-close text-reset ms-auto" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    <button type="button" class="btn-close text-reset ms-auto" data-bs-dismiss="offcanvas"
+                        aria-label="Close"></button>
                 </div>
                 <div class="offcanvas-body d-flex flex-column">
                     <nav class="navbar-nav gap-2">
                         <div class="nav-item-group">
-                            <span class="nav-link disabled fw-800 text-primary small mb-1" style="opacity: 1;">HOME</span>
+                            <span class="nav-link disabled fw-800 text-primary small mb-1"
+                                style="opacity: 1;">HOME</span>
                             <div class="mobile-submenu d-flex flex-column gap-2">
                                 <a class="nav-link" href="index.html">EXPLORE</a>
                                 <a class="nav-link" href="home-2.html">GLOBAL</a>
@@ -105,14 +212,16 @@
                         <a class="nav-link" href="blog.html">JOURNAL</a>
                         <a class="nav-link" href="contact.html">CONNECT</a>
                     </nav>
-                    
+
                     <div class="mt-auto pt-5">
                         <div class="d-flex gap-2 mb-4">
-                            <button class="btn btn-outline border-2 w-100 p-3 theme-toggle-btn"><i class="bi bi-moon-fill theme-toggle-icon"></i></button>
-                            <button class="btn btn-outline border-2 w-100 p-3 rtl-toggle-btn"><i class="bi bi-translate"></i></button>
+                            <button class="btn btn-outline border-2 w-100 p-3 theme-toggle-btn"><i
+                                    class="bi bi-moon-fill theme-toggle-icon"></i></button>
+                            <button class="btn btn-outline border-2 w-100 p-3 rtl-toggle-btn fw-800">RTL</button>
                         </div>
                         <a href="dashboard.html" class="btn btn-primary w-100 py-3 fw-800 mb-3">ACCESS PORTAL</a>
-                        <a href="register.html" class="btn btn-outline border-3 border-primary w-100 py-3 fw-800">JOIN US</a>
+                        <a href="register.html" class="btn btn-outline border-3 border-primary w-100 py-3 fw-800">JOIN
+                            US</a>
                     </div>
                 </div>
             </div>
@@ -133,21 +242,24 @@
                         <div class="timeline-dot"></div>
                         <div class="timeline-content">
                             <h4 class="text-primary fw-800">2023: THE FIRST SPARK</h4>
-                            <p class="h5 fw-bold mt-3">Founders struggling to find consistent partners lead to a 10-friend Alpha launch.</p>
+                            <p class="h5 fw-bold mt-3">Founders struggling to find consistent partners lead to a
+                                10-friend Alpha launch.</p>
                         </div>
                     </div>
                     <div class="timeline-item right">
                         <div class="timeline-dot"></div>
                         <div class="timeline-content">
                             <h4 class="text-primary fw-800">2024: TOPIC CARDS LAUNCHED</h4>
-                            <p class="h5 fw-bold mt-3">Breaking small talk barriers. 5,000 members joined across Europe.</p>
+                            <p class="h5 fw-bold mt-3">Breaking small talk barriers. 5,000 members joined across Europe.
+                            </p>
                         </div>
                     </div>
                     <div class="timeline-item">
                         <div class="timeline-dot"></div>
                         <div class="timeline-content">
                             <h4 class="text-primary fw-800">2025: GOING GLOBAL</h4>
-                            <p class="h5 fw-bold mt-3">Launched in Asia Hubs and South America. Milestone 20,000 monthly sessions.</p>
+                            <p class="h5 fw-bold mt-3">Launched in Asia Hubs and South America. Milestone 20,000 monthly
+                                sessions.</p>
                         </div>
                     </div>
                 </div>
@@ -161,15 +273,18 @@
                 <div class="row g-5">
                     <div class="col-md-6 border-bottom border-2 border-white pb-5">
                         <h4 class="fw-800 text-primary">HUMAN FIRST</h4>
-                        <p class="h5 fw-bold opacity-75">Language is empathy and shared stories, not just mathematical algorithms.</p>
+                        <p class="h5 fw-bold opacity-75">Language is empathy and shared stories, not just mathematical
+                            algorithms.</p>
                     </div>
                     <div class="col-md-6 border-bottom border-2 border-white pb-5">
                         <h4 class="fw-800 text-primary">RADICAL INCLUSION</h4>
-                        <p class="h5 fw-bold opacity-75">Accessible tools for everyone, regardless of location or financial status.</p>
+                        <p class="h5 fw-bold opacity-75">Accessible tools for everyone, regardless of location or
+                            financial status.</p>
                     </div>
                     <div class="col-md-6 pt-md-5">
                         <h4 class="fw-800 text-primary">SCIENTIFIC METHODS</h4>
-                        <p class="h5 fw-bold opacity-75">Built on principles of active recall and tandem peer-learning models.</p>
+                        <p class="h5 fw-bold opacity-75">Built on principles of active recall and tandem peer-learning
+                            models.</p>
                     </div>
                     <div class="col-md-6 pt-md-5">
                         <h4 class="fw-800 text-primary">CULTURAL EMPATHY</h4>
@@ -186,28 +301,36 @@
                 <div class="row g-5">
                     <div class="col-md-6">
                         <div class="border-4 border-black p-4 bg-white mb-4">
-                            <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=500&h=500&fit=crop" alt="Alex Chen" class="img-fluid border-4 border-primary mb-4" style="width:250px; height:250px; object-fit: cover;">
+                            <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=500&h=500&fit=crop"
+                                alt="Alex Chen" class="img-fluid border-4 border-primary mb-4"
+                                style="width:250px; height:250px; object-fit: cover;">
                             <h4 class="fw-800 text-uppercase">Alex Chen</h4>
                             <p class="text-primary fw-800 small tracking-widest uppercase">Founder & CEO</p>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="border-4 border-black p-4 bg-white mb-4">
-                            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=500&h=500&fit=crop" alt="Sara Lopez" class="img-fluid border-4 border-primary mb-4" style="width:250px; height:250px; object-fit: cover;">
+                            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=500&h=500&fit=crop"
+                                alt="Sara Lopez" class="img-fluid border-4 border-primary mb-4"
+                                style="width:250px; height:250px; object-fit: cover;">
                             <h4 class="fw-800 text-uppercase">Sara Lopez</h4>
                             <p class="text-primary fw-800 small tracking-widest uppercase">Lead Linguist</p>
                         </div>
                     </div>
                     <div class="col-md-6 mt-lg-5">
                         <div class="border-4 border-black p-4 bg-white mb-4">
-                            <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=500&h=500&fit=crop" alt="James Miller" class="img-fluid border-4 border-primary mb-4" style="width:250px; height:250px; object-fit: cover;">
+                            <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=500&h=500&fit=crop"
+                                alt="James Miller" class="img-fluid border-4 border-primary mb-4"
+                                style="width:250px; height:250px; object-fit: cover;">
                             <h4 class="fw-800 text-uppercase">James Miller</h4>
                             <p class="text-primary fw-800 small tracking-widest uppercase">Tech Lead</p>
                         </div>
                     </div>
                     <div class="col-md-6 mt-lg-5">
                         <div class="border-4 border-black p-4 bg-white mb-4">
-                            <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=500&h=500&fit=crop" alt="Yuki Sato" class="img-fluid border-4 border-primary mb-4" style="width:250px; height:250px; object-fit: cover;">
+                            <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=500&h=500&fit=crop"
+                                alt="Yuki Sato" class="img-fluid border-4 border-primary mb-4"
+                                style="width:250px; height:250px; object-fit: cover;">
                             <h4 class="fw-800 text-uppercase">Yuki Sato</h4>
                             <p class="text-primary fw-800 small tracking-widest uppercase">Growth Head</p>
                         </div>
@@ -221,10 +344,18 @@
             <div class="container text-center">
                 <p class="fw-800 text-uppercase tracking-widest mb-5">Trusted Educators</p>
                 <div class="row g-5 opacity-75">
-                    <div class="col-6 col-md-3"><h4 class="fw-800">UNI-GLOBAL</h4></div>
-                    <div class="col-6 col-md-3"><h4 class="fw-800">LINGUA-SCH</h4></div>
-                    <div class="col-6 col-md-3"><h4 class="fw-800">VOCAB-LAB</h4></div>
-                    <div class="col-6 col-md-3"><h4 class="fw-800">EDU-TALK</h4></div>
+                    <div class="col-6 col-md-3">
+                        <h4 class="fw-800">UNI-GLOBAL</h4>
+                    </div>
+                    <div class="col-6 col-md-3">
+                        <h4 class="fw-800">LINGUA-SCH</h4>
+                    </div>
+                    <div class="col-6 col-md-3">
+                        <h4 class="fw-800">VOCAB-LAB</h4>
+                    </div>
+                    <div class="col-6 col-md-3">
+                        <h4 class="fw-800">EDU-TALK</h4>
+                    </div>
                 </div>
             </div>
         </section>
@@ -235,7 +366,7 @@
             <div class="row g-5">
                 <div class="col-md-6 col-lg-3">
                     <a class="d-flex align-items-center mb-4" href="index.html">
-                        <img src="assets/images/weblogo.svg" alt="LinguaBridge" width="180" height="40">
+                        <img src="assets/images/Logo2.png" alt="LinguaBridge" width="180" height="40">
                     </a>
                     <p class="text-black fw-bold mb-4">The world's most human language exchange community Connecting
                         learners globally.</p>
@@ -285,4 +416,5 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/main.js"></script>
 </body>
+
 </html>

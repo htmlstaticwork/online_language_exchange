@@ -1,26 +1,29 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="light" dir="ltr">
+
 <head>
     <!-- Core Meta -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Article | LinguaBridge - Detailed Insights</title>
-    <link rel="icon" type="image/svg+xml" href="assets/images/logo.svg">
+    <link rel="icon" type="image/png" href="assets/images/favicon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&family=Outfit:wght@700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&family=Outfit:wght@700;800&display=swap"
+        rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/dark-mode.css">
     <link rel="stylesheet" href="assets/css/rtl.css">
 </head>
+
 <body>
     <!-- Header (Identical on all pages) -->
     <header class="navbar navbar-expand-custom sticky-top">
         <div class="container-fluid px-4">
             <a class="navbar-brand d-flex align-items-center" href="index.html">
-                <img src="assets/images/weblogo.svg" alt="LinguaBridge" width="180" height="40">
+                <img src="assets/images/Logo2.png" alt="LinguaBridge" width="180" height="40">
             </a>
 
             <!-- Right-aligned Toggler for Mobile -->
@@ -33,7 +36,8 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav mx-auto">
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="homeDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle" href="#" id="homeDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
                             Home
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="homeDropdown">
@@ -48,24 +52,26 @@
                     <li class="nav-item"><a class="nav-link" href="contact.html">Connect</a></li>
                 </ul>
                 <div class="d-flex align-items-center gap-3 desktop-nav-buttons">
-                    <button class="btn btn-link p-0 text-black theme-toggle-btn"><i
+                    <button class="btn nav-btn-icon theme-toggle-btn"><i
                             class="bi bi-moon-fill theme-toggle-icon fs-5"></i></button>
-                    <button class="btn btn-link p-0 text-black rtl-toggle-btn"><i
-                            class="bi bi-translate fs-5"></i></button>
+                    <button class="btn nav-btn-icon rtl-toggle-btn fw-800">RTL</button>
                     <a href="dashboard.html" class="btn btn-primary fw-bold">Access</a>
                     <a href="register.html" class="btn btn-primary fw-bold">Join Us</a>
                 </div>
             </div>
 
             <!-- Offcanvas Menu (Visible < 1100px) -->
-            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
+                aria-labelledby="offcanvasNavbarLabel">
                 <div class="offcanvas-header border-bottom border-2 border-primary">
-                    <button type="button" class="btn-close text-reset ms-auto" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    <button type="button" class="btn-close text-reset ms-auto" data-bs-dismiss="offcanvas"
+                        aria-label="Close"></button>
                 </div>
                 <div class="offcanvas-body d-flex flex-column">
                     <nav class="navbar-nav gap-2">
                         <div class="nav-item-group">
-                            <span class="nav-link disabled fw-800 text-primary small mb-1" style="opacity: 1;">HOME</span>
+                            <span class="nav-link disabled fw-800 text-primary small mb-1"
+                                style="opacity: 1;">HOME</span>
                             <div class="mobile-submenu d-flex flex-column gap-2">
                                 <a class="nav-link" href="index.html">EXPLORE</a>
                                 <a class="nav-link" href="home-2.html">GLOBAL</a>
@@ -77,14 +83,16 @@
                         <a class="nav-link active" href="blog.html">JOURNAL</a>
                         <a class="nav-link" href="contact.html">CONNECT</a>
                     </nav>
-                    
+
                     <div class="mt-auto pt-5">
                         <div class="d-flex gap-2 mb-4">
-                            <button class="btn btn-outline border-2 w-100 p-3 theme-toggle-btn"><i class="bi bi-moon-fill theme-toggle-icon"></i></button>
-                            <button class="btn btn-outline border-2 w-100 p-3 rtl-toggle-btn"><i class="bi bi-translate"></i></button>
+                            <button class="btn btn-outline border-2 w-100 p-3 theme-toggle-btn"><i
+                                    class="bi bi-moon-fill theme-toggle-icon"></i></button>
+                            <button class="btn btn-outline border-2 w-100 p-3 rtl-toggle-btn fw-800">RTL</button>
                         </div>
                         <a href="dashboard.html" class="btn btn-primary w-100 py-3 fw-800 mb-3">ACCESS PORTAL</a>
-                        <a href="register.html" class="btn btn-outline border-3 border-primary w-100 py-3 fw-800">JOIN US</a>
+                        <a href="register.html" class="btn btn-outline border-3 border-primary w-100 py-3 fw-800">JOIN
+                            US</a>
                     </div>
                 </div>
             </div>
@@ -98,30 +106,46 @@
                     <!-- Main Article Content (2nd-column pattern via Bootstrap Grid) -->
                     <div class="col-lg-8 pe-lg-5">
                         <span class="badge bg-primary p-2 px-3 fw-bold mb-4" id="blog-details-category">CULTURE</span>
-                        <h1 class="fw-bolder mb-3 text-uppercase" id="blog-details-title" style="font-size: clamp(2.25rem, 4.2vw, 3.75rem); line-height: 1.05;">5 secrets to native slang.</h1>
+                        <h1 class="fw-bolder mb-3 text-uppercase" id="blog-details-title"
+                            style="font-size: clamp(2.25rem, 4.2vw, 3.75rem); line-height: 1.05;">5 secrets to native
+                            slang.</h1>
                         <div class="d-flex flex-wrap gap-3 align-items-center mb-5">
                             <p class="small fw-bold opacity-75 mb-0" id="blog-details-date">OCT 15, 2026</p>
                             <span class="opacity-50">•</span>
                             <p class="small fw-bold opacity-75 mb-0" id="blog-details-readtime">5 MIN READ</p>
                         </div>
-                        
+
                         <figure class="mb-5">
-                            <img src="assets/images/hero-global.jpg" alt="People connecting across languages" id="blog-details-hero" class="img-fluid w-100 border border-4 border-primary" style="aspect-ratio: 16 / 9; object-fit: cover;">
-                            <figcaption class="small fw-bold opacity-75 mt-3" id="blog-details-caption">Real fluency is built in real conversations.</figcaption>
+                            <img src="assets/images/hero-global.jpg" alt="People connecting across languages"
+                                id="blog-details-hero" class="img-fluid w-100 border border-4 border-primary"
+                                style="aspect-ratio: 16 / 9; object-fit: cover;">
+                            <figcaption class="small fw-bold opacity-75 mt-3" id="blog-details-caption">Real fluency is
+                                built in real conversations.</figcaption>
                         </figure>
-                        
-                        <div class="article-body fs-5 fw-bold text-inherit opacity-75" id="blog-details-body" style="line-height: 1.9;">
-                            <p class="mb-5">Language is more than just a set of grammatical rules. It is a living, breathing entity that evolves through the streets, the cafés, and the conversations of everyday people. To truly master a language, one must venture beyond the textbooks and dive into the world of slang.</p>
-                            
-                            <h2 class="fw-bolder mb-4 text-inherit" style="font-size: clamp(1.5rem, 2.4vw, 2.25rem);">1. Context Over Literal Translation</h2>
-                            <p class="mb-5">Many slang phrases make zero sense when translated literally. Understanding the context—who is speaking, where they are, and the underlying emotion—is the first key to unlocking native-level communication.</p>
+
+                        <div class="article-body fs-5 fw-bold text-inherit opacity-75" id="blog-details-body"
+                            style="line-height: 1.9;">
+                            <p class="mb-5">Language is more than just a set of grammatical rules. It is a living,
+                                breathing entity that evolves through the streets, the cafés, and the conversations of
+                                everyday people. To truly master a language, one must venture beyond the textbooks and
+                                dive into the world of slang.</p>
+
+                            <h2 class="fw-bolder mb-4 text-inherit" style="font-size: clamp(1.5rem, 2.4vw, 2.25rem);">1.
+                                Context Over Literal Translation</h2>
+                            <p class="mb-5">Many slang phrases make zero sense when translated literally. Understanding
+                                the context—who is speaking, where they are, and the underlying emotion—is the first key
+                                to unlocking native-level communication.</p>
 
                             <blockquote class="border-start border-4 border-primary ps-4 ps-md-5 my-5 h4 fw-bolder">
-                                "The best classroom for slang is a 30-minute session with a native partner who isn't afraid to correct your awkwardness."
+                                "The best classroom for slang is a 30-minute session with a native partner who isn't
+                                afraid to correct your awkwardness."
                             </blockquote>
 
-                            <h2 class="fw-bolder mb-4 text-inherit" style="font-size: clamp(1.5rem, 2.4vw, 2.25rem);">2. Emotional Cadence</h2>
-                            <p class="mb-5">Every culture has a unique emotional rhythm. Japanese slang often focuses on shared social harmony, while Italian colloquialisms might emphasize dramatic emphasis. Listen for the pauses as much as the words.</p>
+                            <h2 class="fw-bolder mb-4 text-inherit" style="font-size: clamp(1.5rem, 2.4vw, 2.25rem);">2.
+                                Emotional Cadence</h2>
+                            <p class="mb-5">Every culture has a unique emotional rhythm. Japanese slang often focuses on
+                                shared social harmony, while Italian colloquialisms might emphasize dramatic emphasis.
+                                Listen for the pauses as much as the words.</p>
                         </div>
                     </div>
 
@@ -129,9 +153,12 @@
                     <aside class="col-lg-4">
                         <div class="p-4 p-lg-5 border-4 border-primary section-inverted card">
                             <h4 class="fw-bolder text-primary mb-4">GET IN SIGHTS</h4>
-                            <p class="fw-bold mb-5 h6">Join 5,000+ serious polyglots receiving our weekly journal entries.</p>
+                            <p class="fw-bold mb-5 h6">Join 5,000+ serious polyglots receiving our weekly journal
+                                entries.</p>
                             <form class="d-grid gap-3">
-                                <input type="email" class="form-control border-3 border-primary rounded-0 p-3 bg-transparent text-inherit fw-bold" placeholder="EMAIL ADDRESS">
+                                <input type="email"
+                                    class="form-control border-3 border-primary rounded-0 p-3 bg-transparent text-inherit fw-bold"
+                                    placeholder="EMAIL ADDRESS">
                                 <button class="btn btn-primary py-3 fw-bolder">SIGN UP</button>
                             </form>
                         </div>
@@ -144,13 +171,16 @@
                                 </div>
                                 <div class="flex-grow-1">
                                     <h5 class="fw-bolder mb-1">LinguaBridge Editorial</h5>
-                                    <p class="small fw-bold opacity-75 mb-3">Community-led insights from tandem partners worldwide.</p>
+                                    <p class="small fw-bold opacity-75 mb-3">Community-led insights from tandem partners
+                                        worldwide.</p>
                                     <div class="d-flex gap-3 mb-3">
                                         <a href="#" class="text-primary"><i class="bi bi-twitter-x fs-5"></i></a>
                                         <a href="#" class="text-primary"><i class="bi bi-instagram fs-5"></i></a>
                                         <a href="#" class="text-primary"><i class="bi bi-linkedin fs-5"></i></a>
                                     </div>
-                                    <p class="small fw-bold opacity-75 mb-0" style="line-height: 1.6;">We publish field notes from real sessions: what makes conversations flow, what causes stalls, and the micro-habits that turn “study time” into actual speaking ability.</p>
+                                    <p class="small fw-bold opacity-75 mb-0" style="line-height: 1.6;">We publish field
+                                        notes from real sessions: what makes conversations flow, what causes stalls, and
+                                        the micro-habits that turn “study time” into actual speaking ability.</p>
                                 </div>
                             </div>
                         </div>
@@ -160,19 +190,25 @@
                             <ul class="list-unstyled d-grid gap-4" id="blog-details-related">
                                 <li class="d-flex gap-3">
                                     <a href="blog-details.html?post=tandem" class="flex-shrink-0">
-                                        <img src="assets/images/methods-1.svg" alt="Tandem model icon" width="64" height="64" class="border border-3 border-primary p-2 bg-white">
+                                        <img src="assets/images/methods-1.svg" alt="Tandem model icon" width="64"
+                                            height="64" class="border border-3 border-primary p-2 bg-white">
                                     </a>
                                     <div class="flex-grow-1">
-                                        <a href="blog-details.html?post=tandem" class="text-inherit fw-bolder text-decoration-none d-inline-block">TANDEM ACCELERATION MODEL →</a>
+                                        <a href="blog-details.html?post=tandem"
+                                            class="text-inherit fw-bolder text-decoration-none d-inline-block">TANDEM
+                                            ACCELERATION MODEL →</a>
                                         <p class="small opacity-50 fw-bold mt-1 mb-0">OCT 12, 2026</p>
                                     </div>
                                 </li>
                                 <li class="d-flex gap-3">
                                     <a href="blog-details.html?post=prep" class="flex-shrink-0">
-                                        <img src="assets/images/methods-2.svg" alt="Session prep icon" width="64" height="64" class="border border-3 border-primary p-2 bg-white">
+                                        <img src="assets/images/methods-2.svg" alt="Session prep icon" width="64"
+                                            height="64" class="border border-3 border-primary p-2 bg-white">
                                     </a>
                                     <div class="flex-grow-1">
-                                        <a href="blog-details.html?post=prep" class="text-inherit fw-bolder text-decoration-none d-inline-block">PREPARING FOR SESSIONS →</a>
+                                        <a href="blog-details.html?post=prep"
+                                            class="text-inherit fw-bolder text-decoration-none d-inline-block">PREPARING
+                                            FOR SESSIONS →</a>
                                         <p class="small opacity-50 fw-bold mt-1 mb-0">OCT 05, 2026</p>
                                     </div>
                                 </li>
@@ -189,7 +225,7 @@
             <div class="row g-5">
                 <div class="col-md-6 col-lg-3">
                     <a class="d-flex align-items-center mb-4" href="index.html">
-                        <img src="assets/images/weblogo.svg" alt="LinguaBridge" width="180" height="40">
+                        <img src="assets/images/Logo2.png" alt="LinguaBridge" width="180" height="40">
                     </a>
                     <p class="text-black fw-bold mb-4">The world's most human language exchange community Connecting
                         learners globally.</p>
@@ -239,4 +275,5 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/main.js"></script>
 </body>
+
 </html>

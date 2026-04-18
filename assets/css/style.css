@@ -186,6 +186,27 @@ textarea::-ms-input-placeholder,
     box-shadow: 0 4px 15px rgba(232, 99, 74, 0.3);
 }
 
+.nav-btn-icon {
+    width: 42px;
+    height: 42px;
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid var(--secondary-color) !important;
+    background-color: transparent !important;
+    color: var(--secondary-color) !important;
+    transition: var(--transition);
+    padding: 0 !important;
+    border-radius: 0 !important;
+    text-decoration: none !important;
+}
+
+.nav-btn-icon:hover {
+    background-color: var(--primary-color) !important;
+    border-color: var(--primary-color) !important;
+    color: #FFF !important;
+}
+
 /* Theme color overrides for Bootstrap utilities */
 .bg-primary {
     background-color: var(--primary-color) !important;
