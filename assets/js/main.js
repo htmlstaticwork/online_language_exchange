@@ -101,7 +101,11 @@ document.addEventListener('DOMContentLoaded', () => {
             const lang1 = document.querySelector('#i-speak').value;
             const lang2 = document.querySelector('#i-learn').value;
             const randomCount = Math.floor(Math.random() * 500) + 50;
+            
+            counterText.classList.remove('pulse-active');
+            void counterText.offsetWidth; // Trigger reflow
             counterText.textContent = `${randomCount} active partners for ${lang1} ↔ ${lang2} right now.`;
+            counterText.classList.add('pulse-active');
         });
     }
 
@@ -144,7 +148,24 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }, observerOptions);
 
-    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+    document.querySelectorAll('.fade-up, .journey-step, .journey-card').forEach(el => observer.observe(el));
+
+    // Special observer for Journey Path reveal
+    const journeyPath = document.querySelector('.journey-path');
+    if (journeyPath) {
+        const journeyObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    journeyPath.style.transition = 'height 2s ease-out';
+                    journeyPath.style.height = '100%';
+                }
+            });
+        }, { threshold: 0.2 });
+        journeyObserver.observe(document.querySelector('.journey-container'));
+        
+        // Initialize path height to 0
+        journeyPath.style.height = '0';
+    }
 
     /**
      * Tooltip Initialization

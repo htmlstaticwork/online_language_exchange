@@ -107,3 +107,29 @@
         margin-right: 0;
     }
 }
+
+/* Journey & Avatar RTL */
+[dir="rtl"] .avatar-stack img {
+    margin-left: 0;
+    margin-right: -12px;
+}
+
+[dir="rtl"] .avatar-stack img:first-child {
+    margin-right: 0;
+}
+
+@media (max-width: 991px) {
+    [dir="rtl"] .journey-path {
+        left: auto;
+        right: 30px;
+    }
+    [dir="rtl"] .journey-dot {
+        left: auto;
+        right: 30px;
+    }
+    [dir="rtl"] .journey-card {
+        margin-left: 0;
+        margin-right: 60px;
+    }
+}
+

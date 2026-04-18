@@ -10,6 +10,7 @@
     --section-border: var(--border-color);
 
     color-scheme: dark;
+    --shadow-color: var(--primary-color); /* Glow-like shadow in dark mode */
 }
 
 [data-theme="dark"] body {

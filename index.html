@@ -251,9 +251,18 @@
                             Connecting.</span></h1>
                     <p class="lead mb-4 text-black fw-bold">Join the world's most human language exchange. Real people
                         practicing together, without scripts or bots.</p>
+                    <div class="d-flex flex-column flex-sm-row gap-4 align-items-center justify-content-center mb-4">
+                        <div class="avatar-stack">
+                            <img src="assets/images/team-alex.png" alt="User">
+                            <img src="assets/images/team-sara.png" alt="User">
+                            <img src="assets/images/team-james.png" alt="User">
+                            <img src="assets/images/team-yuki.png" alt="User">
+                            <div class="ms-3 fw-800 small text-uppercase">+50k Active</div>
+                        </div>
+                    </div>
                     <div class="d-flex flex-column flex-sm-row gap-3 justify-content-center">
-                        <a href="register.html" class="btn btn-primary btn-lg px-5">Find Partner</a>
-                        <a href="services.html" class="btn btn-outline btn-lg px-5 border-2">Learn More</a>
+                        <a href="register.html" class="btn btn-primary btn-lg px-5 neo-shadow">Find Partner</a>
+                        <a href="services.html" class="btn btn-outline btn-lg px-5 border-2 neo-shadow">Learn More</a>
                     </div>
                 </div>
             </div>
@@ -269,11 +278,11 @@
                     </div>
                 </div>
                 <!-- Strict 2-Column Grid -->
-                <div class="matchmaker-box mx-auto" style="max-width: 800px;">
+                <div class="matchmaker-box mx-auto neo-shadow" style="max-width: 800px;">
                     <div class="row g-4 align-items-end">
                         <div class="col-md-6">
                             <label class="form-label fw-800 text-uppercase small">I speak...</label>
-                            <select class="form-select border-2 border-black rounded-0 p-3" id="i-speak">
+                            <select class="form-select border-2 border-black rounded-0 p-3 neo-shadow" id="i-speak">
                                 <option value="English">English</option>
                                 <option value="Spanish">Spanish</option>
                                 <option value="French">French</option>
@@ -281,14 +290,14 @@
                         </div>
                         <div class="col-md-6">
                             <label class="form-label fw-800 text-uppercase small">I'm learning...</label>
-                            <select class="form-select border-2 border-black rounded-0 p-3" id="i-learn">
+                            <select class="form-select border-2 border-black rounded-0 p-3 neo-shadow" id="i-learn">
                                 <option value="Japanese">Japanese</option>
                                 <option value="German">German</option>
                                 <option value="Italian">Italian</option>
                             </select>
                         </div>
                         <div class="col-12 mt-4">
-                            <button class="btn btn-primary w-100 py-3 fw-bold" id="match-btn">Search Now</button>
+                            <button class="btn btn-primary w-100 py-3 fw-bold neo-shadow" id="match-btn">Search Now</button>
                         </div>
                     </div>
                     <div class="mt-5 text-center">
@@ -303,34 +312,75 @@
         <section class="section-padding border-bottom border-2 border-primary">
             <div class="container">
                 <h2 class="text-center display-4 fw-800 mb-5 text-uppercase">Session Flow</h2>
-                <div class="filmstrip-container pb-4">
-                    <div class="frame-card">
-                        <img src="assets/images/methods-1.svg" alt="Matchmaker Icon" class="mb-4"
-                            style="height: 80px; width: auto;">
-                        <h5 class="fw-800 text-uppercase">Matches</h5>
-                        <p class="small text-black fw-bold">We find you a partner with complementary language target
-                            goals.</p>
+                <div class="journey-container">
+                    <div class="journey-path"></div>
+                    
+                    <!-- Step 1 -->
+                    <div class="row journey-step align-items-center">
+                        <div class="col-lg-5 text-lg-end">
+                            <h3 class="fw-800 text-uppercase h2">Matchmaking</h3>
+                            <p class="fw-bold">We find you a partner with complementary language target goals using our human-first algorithm.</p>
+                        </div>
+                        <div class="col-lg-2 d-none d-lg-block">
+                            <div class="journey-dot"></div>
+                        </div>
+                        <div class="col-lg-5">
+                            <div class="journey-card neo-shadow">
+                                <img src="assets/images/methods-1.svg" alt="Matchmaking" class="img-fluid mb-3" style="height: 200px; width: auto; display: block; margin: 0 auto;">
+                                <span class="badge bg-primary rounded-0 p-2 px-3 fw-bold">STEP 01</span>
+                            </div>
+                        </div>
                     </div>
-                    <div class="frame-card">
-                        <img src="assets/images/methods-2.svg" alt="Topic Icon" class="mb-4"
-                            style="height: 80px; width: auto;">
-                        <h5 class="fw-800 text-uppercase">Topics</h5>
-                        <p class="small text-black fw-bold">Select a conversation card to guide your session's flow
-                            naturally.</p>
+
+                    <!-- Step 2 -->
+                    <div class="row journey-step align-items-center flex-lg-row-reverse">
+                        <div class="col-lg-5 text-lg-start">
+                            <h3 class="fw-800 text-uppercase h2">Topic Selection</h3>
+                            <p class="fw-bold">Select a conversation card to guide your session’s flow naturally and avoid awkward silences.</p>
+                        </div>
+                        <div class="col-lg-2 d-none d-lg-block">
+                            <div class="journey-dot"></div>
+                        </div>
+                        <div class="col-lg-5">
+                            <div class="journey-card neo-shadow">
+                                <img src="assets/images/methods-2.svg" alt="Topics" class="img-fluid mb-3" style="height: 200px; width: auto; display: block; margin: 0 auto;">
+                                <span class="badge bg-primary rounded-0 p-2 px-3 fw-bold">STEP 02</span>
+                            </div>
+                        </div>
                     </div>
-                    <div class="frame-card">
-                        <img src="assets/images/methods-3.svg" alt="Time Icon" class="mb-4"
-                            style="height: 80px; width: auto;">
-                        <h5 class="fw-800 text-uppercase">Splits</h5>
-                        <p class="small text-black fw-bold">15 minutes in your target language, then 15 minutes in
-                            theirs.</p>
+
+                    <!-- Step 3 -->
+                    <div class="row journey-step align-items-center">
+                        <div class="col-lg-5 text-lg-end">
+                            <h3 class="fw-800 text-uppercase h2">Live Practice</h3>
+                            <p class="fw-bold">15 minutes in your target language, then 15 minutes in theirs. Pure, balanced exchange.</p>
+                        </div>
+                        <div class="col-lg-2 d-none d-lg-block">
+                            <div class="journey-dot"></div>
+                        </div>
+                        <div class="col-lg-5">
+                            <div class="journey-card neo-shadow">
+                                <img src="assets/images/methods-3.svg" alt="Practice" class="img-fluid mb-3" style="height: 200px; width: auto; display: block; margin: 0 auto;">
+                                <span class="badge bg-primary rounded-0 p-2 px-3 fw-bold">STEP 03</span>
+                            </div>
+                        </div>
                     </div>
-                    <div class="frame-card">
-                        <img src="assets/images/methods-4.svg" alt="Journal Icon" class="mb-4"
-                            style="height: 80px; width: auto;">
-                        <h5 class="fw-800 text-uppercase">Journal</h5>
-                        <p class="small text-black fw-bold">Note down new vocabulary and provide helpful partner
-                            feedback.</p>
+
+                    <!-- Step 4 -->
+                    <div class="row journey-step align-items-center flex-lg-row-reverse">
+                        <div class="col-lg-5 text-lg-start">
+                            <h3 class="fw-800 text-uppercase h2">Session Journal</h3>
+                            <p class="fw-bold">Note down new vocabulary and provide helpful feedback to help your partner grow.</p>
+                        </div>
+                        <div class="col-lg-2 d-none d-lg-block">
+                            <div class="journey-dot"></div>
+                        </div>
+                        <div class="col-lg-5">
+                            <div class="journey-card neo-shadow">
+                                <img src="assets/images/methods-4.svg" alt="Journal" class="img-fluid border border-2 border-black p-4 mb-3" style="background: #FFF">
+                                <span class="badge bg-primary rounded-0 p-2 px-3 fw-bold">STEP 04</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -340,10 +390,11 @@
         <section class="section-inverted border-bottom border-2 border-primary">
             <div class="ticker-wrap">
                 <div class="ticker-content">
-                    Maria (São Paulo) just completed 50 sessions in French 🎉 &nbsp;&nbsp; | &nbsp;&nbsp;
-                    Yuki (Tokyo) earned the 'Polyglot' badge 🏅 &nbsp;&nbsp; | &nbsp;&nbsp;
-                    Ahmed (Cairo) completed an A2 Arabic milestone 🚀 &nbsp;&nbsp; | &nbsp;&nbsp;
-                    Elena (Madrid) joined 10 culture circles this week ✨
+                    <div class="ticker-item"><i class="bi bi-person-circle text-primary"></i> Maria (São Paulo) just completed 50 sessions in French 🎉</div>
+                    <div class="ticker-item"><i class="bi bi-trophy text-primary"></i> Yuki (Tokyo) earned the 'Polyglot' badge 🏅</div>
+                    <div class="ticker-item"><i class="bi bi-star-fill text-primary"></i> Ahmed (Cairo) completed an A2 Arabic milestone 🚀</div>
+                    <div class="ticker-item"><i class="bi bi-globe2 text-primary"></i> Elena (Madrid) joined 10 culture circles this week ✨</div>
+                    <div class="ticker-item"><i class="bi bi-lightning-fill text-primary"></i> 1,240 sessions starting in the next 10 minutes!</div>
                 </div>
             </div>
             <div class="container section-padding">
